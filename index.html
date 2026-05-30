@@ -1,1 +1,857 @@
-TEST NEW FILE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OctoNet Mobility — Travel eSIM plans built for Canadians. Clear pricing. No contracts. Launching 2027.">
+<meta name="theme-color" content="#040E1C">
+<title>OctoNet Mobility — Wireless Without Financial Stress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+<style>
+/* ── VARIABLES ─────────────────────────────── */
+:root {
+  --navy:    #040E1C;
+  --navy2:   #071426;
+  --navy3:   #0A1E38;
+  --card:    rgba(10,28,54,0.92);
+  --cyan:    #12C9FF;
+  --cyan2:   #7DE7FF;
+  --green:   #1D9E75;
+  --green2:  #8DFFE9;
+  --border:  rgba(18,201,255,0.12);
+  --muted:   rgba(125,231,255,0.55);
+  --text:    #F0F8FF;
+  --radius:  22px;
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* ── RESET ─────────────────────────────────── */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── GRID BACKGROUND ───────────────────────── */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(18,201,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18,201,255,0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ── LAYOUT ────────────────────────────────── */
+.container { max-width:1120px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+section { padding:100px 0; position:relative; }
+
+/* ── NAV ───────────────────────────────────── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:0 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom:1px solid var(--border);
+  background: rgba(4,14,28,0.88);
+  transition: background 0.3s;
+}
+.nav-inner {
+  max-width:1120px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  height:68px;
+}
+.nav-logo {
+  display:flex; align-items:center; gap:12px;
+  text-decoration:none;
+}
+.nav-logo img { height:36px; }
+.nav-logo-text {
+  font-family:var(--font-display);
+  font-weight:800; font-size:17px;
+  color:var(--text);
+  letter-spacing:-0.3px;
+}
+.nav-links {
+  display:flex; align-items:center; gap:8px;
+  list-style:none;
+}
+.nav-links a {
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px; font-weight:500;
+  padding:8px 14px;
+  border-radius:10px;
+  transition:color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color:var(--text); background:rgba(255,255,255,0.06); }
+.nav-cta {
+  background:var(--cyan); color:#040E1C;
+  font-weight:700; font-size:14px;
+  padding:10px 22px; border-radius:12px;
+  text-decoration:none;
+  transition:opacity 0.2s, transform 0.15s;
+  white-space:nowrap;
+}
+.nav-cta:hover { opacity:0.88; transform:translateY(-1px); }
+.nav-mobile-toggle { display:none; background:none; border:none; color:var(--text); cursor:pointer; font-size:24px; }
+
+/* ── HERO ──────────────────────────────────── */
+.hero {
+  min-height:100vh;
+  display:flex; align-items:center;
+  padding-top:68px;
+  overflow:hidden;
+}
+.hero-inner {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:60px; align-items:center;
+  width:100%; max-width:1120px; margin:0 auto;
+  padding:0 24px; position:relative; z-index:1;
+}
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(18,201,255,0.08);
+  border:1px solid rgba(18,201,255,0.18);
+  color:var(--cyan);
+  font-size:12px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+  padding:8px 16px; border-radius:999px;
+  margin-bottom:28px;
+  animation: fadeUp 0.7s ease both;
+}
+.hero-eyebrow span { width:7px; height:7px; border-radius:50%; background:var(--green); display:inline-block; box-shadow:0 0 8px var(--green); animation:pulse 2s ease infinite; }
+.hero-title {
+  font-family:var(--font-display);
+  font-size:clamp(42px,5.5vw,68px);
+  font-weight:800; line-height:1.05;
+  letter-spacing:-2px;
+  margin-bottom:24px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-title em { font-style:normal; color:var(--cyan); }
+.hero-subtitle {
+  font-size:18px; line-height:1.7;
+  color:rgba(240,248,255,0.68);
+  max-width:480px;
+  margin-bottom:36px;
+  animation: fadeUp 0.7s 0.2s ease both;
+  font-weight:300;
+}
+.hero-pills {
+  display:flex; flex-wrap:wrap; gap:10px;
+  margin-bottom:40px;
+  animation: fadeUp 0.7s 0.25s ease both;
+}
+.pill {
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.10);
+  color:rgba(240,248,255,0.75);
+  font-size:13px; font-weight:600;
+  padding:8px 16px; border-radius:999px;
+}
+.hero-actions {
+  display:flex; flex-wrap:wrap; gap:14px;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+.btn-primary {
+  background:var(--cyan); color:#040E1C;
+  font-weight:700; font-size:16px;
+  padding:16px 32px; border-radius:16px;
+  text-decoration:none; border:none; cursor:pointer;
+  transition:opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow:0 8px 32px rgba(18,201,255,0.25);
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-body);
+}
+.btn-primary:hover { opacity:0.88; transform:translateY(-2px); box-shadow:0 12px 40px rgba(18,201,255,0.35); }
+.btn-secondary {
+  background:transparent; color:var(--text);
+  font-weight:600; font-size:16px;
+  padding:16px 32px; border-radius:16px;
+  text-decoration:none; border:1px solid var(--border);
+  transition:background 0.2s, border-color 0.2s, transform 0.15s;
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-body);
+}
+.btn-secondary:hover { background:rgba(255,255,255,0.06); border-color:rgba(18,201,255,0.3); transform:translateY(-2px); }
+.hero-visual {
+  display:flex; justify-content:center; align-items:center;
+  position:relative;
+  animation: fadeIn 1s 0.4s ease both;
+}
+.hero-phones {
+  display:flex; gap:-20px; align-items:flex-end;
+  position:relative;
+}
+.phone-card {
+  border-radius:36px;
+  overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.phone-card img { display:block; width:220px; }
+.phone-card.main { z-index:2; transform:translateY(0); }
+.phone-card.secondary { width:185px; transform:translateX(-20px) translateY(30px); opacity:0.75; z-index:1; }
+.phone-card.secondary img { width:185px; }
+.hero-glow {
+  position:absolute; width:400px; height:400px; border-radius:50%;
+  background:radial-gradient(circle, rgba(18,201,255,0.12) 0%, transparent 70%);
+  top:50%; left:50%; transform:translate(-50%,-50%);
+  pointer-events:none;
+  animation:glowPulse 4s ease-in-out infinite;
+}
+
+/* ── TRUST BAR ─────────────────────────────── */
+.trust-bar {
+  padding:28px 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:rgba(10,28,54,0.5);
+}
+.trust-inner {
+  max-width:1120px; margin:0 auto; padding:0 24px;
+  display:flex; align-items:center; justify-content:center;
+  flex-wrap:wrap; gap:40px;
+}
+.trust-item {
+  display:flex; align-items:center; gap:10px;
+  font-size:14px; font-weight:600; color:rgba(240,248,255,0.65);
+}
+.trust-item span { font-size:18px; }
+.trust-dot { width:4px; height:4px; border-radius:50%; background:var(--border); }
+
+/* ── SECTION LABELS ────────────────────────── */
+.section-eyebrow {
+  font-size:11px; font-weight:700; letter-spacing:2.5px;
+  text-transform:uppercase; color:var(--cyan);
+  margin-bottom:16px;
+}
+.section-title {
+  font-family:var(--font-display);
+  font-size:clamp(32px,4vw,52px);
+  font-weight:800; letter-spacing:-1.5px;
+  line-height:1.1; margin-bottom:20px;
+}
+.section-subtitle {
+  font-size:18px; color:rgba(240,248,255,0.6);
+  line-height:1.7; font-weight:300;
+  max-width:560px;
+}
+
+/* ── FEATURES ──────────────────────────────── */
+.features-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:16px; margin-top:60px;
+}
+.feature-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+  transition:border-color 0.3s, transform 0.25s;
+  position:relative; overflow:hidden;
+}
+.feature-card::before {
+  content:'';
+  position:absolute; inset:0; opacity:0;
+  background:radial-gradient(circle at top left, rgba(18,201,255,0.07), transparent 60%);
+  transition:opacity 0.3s;
+}
+.feature-card:hover { border-color:rgba(18,201,255,0.28); transform:translateY(-3px); }
+.feature-card:hover::before { opacity:1; }
+.feature-icon {
+  width:52px; height:52px; border-radius:16px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; margin-bottom:20px;
+}
+.feature-icon.cyan  { background:rgba(18,201,255,0.10); }
+.feature-icon.green { background:rgba(29,158,117,0.10); }
+.feature-icon.purple { background:rgba(139,92,246,0.10); }
+.feature-icon.teal  { background:rgba(6,182,212,0.10); }
+.feature-title {
+  font-family:var(--font-display);
+  font-size:20px; font-weight:700;
+  margin-bottom:10px; letter-spacing:-0.3px;
+}
+.feature-desc { font-size:15px; color:rgba(240,248,255,0.6); line-height:1.65; font-weight:300; }
+.feature-badge {
+  display:inline-block; margin-top:16px;
+  font-size:11px; font-weight:700; letter-spacing:1px;
+  text-transform:uppercase; color:var(--cyan);
+  background:rgba(18,201,255,0.08);
+  padding:5px 12px; border-radius:999px;
+  border:1px solid rgba(18,201,255,0.15);
+}
+
+/* ── PLANS ─────────────────────────────────── */
+.plans { background:rgba(7,20,38,0.6); }
+.plans-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px; margin-top:60px;
+}
+.plan-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px 24px;
+  transition:border-color 0.3s, transform 0.25s;
+  cursor:default;
+}
+.plan-card:hover { border-color:rgba(18,201,255,0.3); transform:translateY(-4px); }
+.plan-flag { font-size:36px; margin-bottom:14px; display:block; }
+.plan-name { font-family:var(--font-display); font-size:17px; font-weight:700; margin-bottom:6px; }
+.plan-desc { font-size:13px; color:rgba(240,248,255,0.55); margin-bottom:18px; line-height:1.5; font-weight:300; }
+.plan-from { font-size:12px; color:rgba(240,248,255,0.45); text-transform:uppercase; letter-spacing:1px; font-weight:600; }
+.plan-price { font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--cyan); margin-top:4px; }
+.plan-price span { font-size:14px; font-weight:500; color:rgba(240,248,255,0.5); }
+.plans-note {
+  text-align:center; margin-top:40px;
+  font-size:14px; color:rgba(240,248,255,0.4);
+}
+.plans-note a { color:var(--cyan); text-decoration:none; }
+.plans-note a:hover { text-decoration:underline; }
+
+/* ── BILL SHIELD ───────────────────────────── */
+.shield-section { overflow:hidden; }
+.shield-card {
+  background:linear-gradient(135deg, rgba(29,158,117,0.10) 0%, rgba(10,28,54,0.95) 50%);
+  border:1px solid rgba(29,158,117,0.25);
+  border-radius:32px;
+  padding:64px;
+  display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+  position:relative; overflow:hidden;
+}
+.shield-card::before {
+  content:'';
+  position:absolute; width:400px; height:400px; border-radius:50%;
+  background:radial-gradient(circle, rgba(29,158,117,0.12) 0%, transparent 70%);
+  top:-100px; left:-100px; pointer-events:none;
+}
+.shield-icon-wrap {
+  width:80px; height:80px; border-radius:24px;
+  background:rgba(29,158,117,0.12);
+  border:1px solid rgba(29,158,117,0.25);
+  display:flex; align-items:center; justify-content:center;
+  font-size:38px; margin-bottom:28px;
+}
+.shield-title {
+  font-family:var(--font-display);
+  font-size:clamp(28px,3.5vw,44px);
+  font-weight:800; letter-spacing:-1.5px; line-height:1.1;
+  margin-bottom:20px;
+}
+.shield-title em { font-style:normal; color:var(--green); }
+.shield-body { font-size:17px; color:rgba(240,248,255,0.65); line-height:1.7; font-weight:300; }
+.shield-points { list-style:none; margin-top:28px; display:flex; flex-direction:column; gap:14px; }
+.shield-points li {
+  display:flex; align-items:center; gap:12px;
+  font-size:15px; font-weight:500; color:rgba(240,248,255,0.8);
+}
+.shield-points li::before { content:'✓'; color:var(--green); font-weight:800; font-size:16px; }
+.shield-visual {
+  display:flex; flex-direction:column; gap:14px;
+}
+.shield-stat {
+  background:rgba(10,28,54,0.8);
+  border:1px solid rgba(29,158,117,0.15);
+  border-radius:18px; padding:22px 24px;
+}
+.shield-stat-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+.shield-stat-value { font-family:var(--font-display); font-size:28px; font-weight:800; color:var(--text); }
+.shield-stat-sub { font-size:13px; color:rgba(240,248,255,0.45); margin-top:4px; font-weight:300; }
+
+/* ── APP SCREENSHOTS ───────────────────────── */
+.screenshots { background:rgba(7,20,38,0.4); }
+.screenshots-scroll {
+  display:flex; gap:16px; overflow-x:auto;
+  padding:8px 4px 24px;
+  scrollbar-width:none; -ms-overflow-style:none;
+  margin-top:60px;
+  scroll-snap-type:x mandatory;
+}
+.screenshots-scroll::-webkit-scrollbar { display:none; }
+.screenshot-item {
+  flex-shrink:0; border-radius:28px; overflow:hidden;
+  border:1px solid rgba(255,255,255,0.07);
+  box-shadow:0 24px 64px rgba(0,0,0,0.5);
+  scroll-snap-align:start;
+  transition:transform 0.3s;
+}
+.screenshot-item:hover { transform:translateY(-6px); }
+.screenshot-item img { display:block; width:220px; }
+
+/* ── WAITLIST ───────────────────────────────── */
+.waitlist-section { background:rgba(7,20,38,0.6); }
+.waitlist-card {
+  background:linear-gradient(135deg, rgba(18,201,255,0.07) 0%, rgba(10,28,54,0.95) 60%);
+  border:1px solid rgba(18,201,255,0.15);
+  border-radius:32px; padding:64px;
+  text-align:center; position:relative; overflow:hidden;
+  max-width:720px; margin:0 auto;
+}
+.waitlist-card::before {
+  content:'';
+  position:absolute; width:500px; height:300px; border-radius:50%;
+  background:radial-gradient(circle, rgba(18,201,255,0.08) 0%, transparent 70%);
+  top:-80px; left:50%; transform:translateX(-50%); pointer-events:none;
+}
+.waitlist-title {
+  font-family:var(--font-display);
+  font-size:clamp(30px,4vw,48px);
+  font-weight:800; letter-spacing:-1.5px;
+  margin-bottom:16px;
+}
+.waitlist-sub { font-size:17px; color:rgba(240,248,255,0.6); margin-bottom:40px; font-weight:300; line-height:1.6; }
+.waitlist-form { display:flex; flex-direction:column; gap:12px; max-width:440px; margin:0 auto; }
+.waitlist-form input {
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(18,201,255,0.15);
+  color:var(--text); font-family:var(--font-body);
+  font-size:16px; padding:16px 20px; border-radius:14px;
+  outline:none; transition:border-color 0.2s;
+  width:100%;
+}
+.waitlist-form input::placeholder { color:rgba(240,248,255,0.35); }
+.waitlist-form input:focus { border-color:rgba(18,201,255,0.45); }
+.waitlist-form .btn-primary { justify-content:center; font-size:16px; }
+.waitlist-note { font-size:13px; color:rgba(240,248,255,0.4); margin-top:16px; }
+.waitlist-success {
+  display:none; padding:20px;
+  background:rgba(29,158,117,0.10); border:1px solid rgba(29,158,117,0.25);
+  border-radius:16px; color:var(--green); font-weight:600; font-size:16px;
+}
+
+/* ── FOOTER ────────────────────────────────── */
+footer {
+  border-top:1px solid var(--border);
+  padding:60px 0 40px;
+  background:rgba(4,14,28,0.8);
+}
+.footer-inner {
+  max-width:1120px; margin:0 auto; padding:0 24px;
+}
+.footer-top {
+  display:grid; grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:48px; padding-bottom:48px;
+  border-bottom:1px solid var(--border);
+}
+.footer-brand { }
+.footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.footer-logo img { height:32px; }
+.footer-logo-name { font-family:var(--font-display); font-weight:800; font-size:16px; }
+.footer-tagline { font-size:14px; color:rgba(240,248,255,0.45); line-height:1.6; font-weight:300; max-width:240px; }
+.footer-social { display:flex; gap:10px; margin-top:20px; }
+.social-btn {
+  width:38px; height:38px; border-radius:10px;
+  background:rgba(255,255,255,0.06); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; text-decoration:none;
+  transition:background 0.2s, border-color 0.2s;
+}
+.social-btn:hover { background:rgba(18,201,255,0.10); border-color:rgba(18,201,255,0.2); }
+.footer-col h4 { font-family:var(--font-display); font-size:14px; font-weight:700; margin-bottom:16px; letter-spacing:0.3px; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.footer-col ul a { color:rgba(240,248,255,0.5); text-decoration:none; font-size:14px; font-weight:400; transition:color 0.2s; }
+.footer-col ul a:hover { color:var(--text); }
+.footer-bottom {
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:32px; flex-wrap:wrap; gap:12px;
+}
+.footer-copy { font-size:13px; color:rgba(240,248,255,0.35); }
+.footer-bottom-links { display:flex; gap:24px; }
+.footer-bottom-links a { font-size:13px; color:rgba(240,248,255,0.4); text-decoration:none; transition:color 0.2s; }
+.footer-bottom-links a:hover { color:var(--cyan); }
+
+/* ── FLOATING SUPPORT ──────────────────────── */
+.float-btn {
+  position:fixed; bottom:28px; right:28px; z-index:99;
+  background:var(--cyan); color:#040E1C;
+  font-weight:700; font-size:14px;
+  padding:14px 22px; border-radius:16px;
+  text-decoration:none; display:flex; align-items:center; gap:8px;
+  box-shadow:0 8px 32px rgba(18,201,255,0.3);
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.float-btn:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(18,201,255,0.4); }
+
+/* ── ANIMATIONS ────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:0.6; transform:scale(0.85); }
+}
+@keyframes glowPulse {
+  0%,100% { opacity:0.6; transform:translate(-50%,-50%) scale(1); }
+  50%      { opacity:1;   transform:translate(-50%,-50%) scale(1.08); }
+}
+
+/* Scroll reveal */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ────────────────────────────── */
+@media (max-width:900px) {
+  .hero-inner { grid-template-columns:1fr; text-align:center; }
+  .hero-subtitle { margin:0 auto 36px; }
+  .hero-pills { justify-content:center; }
+  .hero-actions { justify-content:center; }
+  .hero-visual { display:none; }
+  .features-grid { grid-template-columns:1fr; }
+  .shield-card { grid-template-columns:1fr; padding:40px; }
+  .footer-top { grid-template-columns:1fr 1fr; }
+  .footer-bottom { flex-direction:column; align-items:flex-start; }
+  .nav-links { display:none; }
+  .nav-mobile-toggle { display:block; }
+}
+@media (max-width:600px) {
+  section { padding:72px 0; }
+  .waitlist-card { padding:40px 24px; }
+  .shield-card { padding:32px 24px; }
+  .footer-top { grid-template-columns:1fr; }
+  .plans-grid { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+      <span class="nav-logo-text">OctoNet Mobility</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/plans.html">Plans</a></li>
+      <li><a href="/netpay.html">NETPAY</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/support.html">Support</a></li>
+    </ul>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+    <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').style.display='flex';this.style.display='none'">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span></span> Canadian-Built · Launching 2027</div>
+      <h1 class="hero-title">Wireless Without<br><em>Financial Stress.</em></h1>
+      <p class="hero-subtitle">Simple prepaid travel eSIM plans for Canadians. Clear pricing in CAD. No contracts. No surprise charges. Ever.</p>
+      <div class="hero-pills">
+        <span class="pill">🇺🇸 USA from $12 CAD</span>
+        <span class="pill">🇪🇺 Europe from $16 CAD</span>
+        <span class="pill">🌍 Global from $25 CAD</span>
+        <span class="pill">🛡️ Bill Shield</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#waitlist" class="btn-primary">Join the Waitlist →</a>
+        <a href="/plans.html" class="btn-secondary">View Plans</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="hero-phones">
+        <div class="phone-card secondary">
+          <img src="/Simulator Screenshot - iPhone 17 Pro Max - 2026-05-25 at 18.52.15.png" alt="OctoNet App">
+        </div>
+        <div class="phone-card main">
+          <img src="/Simulator Screenshot - iPhone 17 Pro Max - 2026-05-25 at 18.52.26.png" alt="OctoNet App">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span>🇨🇦</span> Canadian-Built</div>
+    <div class="trust-dot"></div>
+    <div class="trust-item"><span>💳</span> Data-Only Plans</div>
+    <div class="trust-dot"></div>
+    <div class="trust-item"><span>🔒</span> No Contracts</div>
+    <div class="trust-dot"></div>
+    <div class="trust-item"><span>⚡</span> Instant eSIM Activation</div>
+    <div class="trust-dot"></div>
+    <div class="trust-item"><span>🚀</span> Projected 2027 Launch</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Why OctoNet</div>
+      <h2 class="section-title">Built different<br>from the start.</h2>
+      <p class="section-subtitle">Every feature of OctoNet Mobility was built around one idea — wireless should never cause financial stress.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon cyan">🛡️</div>
+        <div class="feature-title">Travel Bill Shield</div>
+        <p class="feature-desc">We will never automatically charge you for overages, top-ups, or renewals. When your data runs out, it simply stops. No surprise charges — ever.</p>
+        <span class="feature-badge">Core Promise</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon purple">⚙️</div>
+        <div class="feature-title">Octo Reimagined</div>
+        <p class="feature-desc">Build your exact travel plan. Choose any data size from 3–50GB and any duration from 7–60 days. The price calculates live in Canadian dollars.</p>
+        <span class="feature-badge">Custom Builder</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon green">🐙</div>
+        <div class="feature-title">OctoCare Support</div>
+        <p class="feature-desc">Plain-language AI support for eSIM setup, device compatibility, plan questions, and billing — no hold music, no confusing phone trees.</p>
+        <span class="feature-badge">AI-Powered</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon teal">💳</div>
+        <div class="feature-title">NETPAY by OctoNet</div>
+        <p class="feature-desc">Pay your OctoNet bill directly from your Canadian bank account. Travel Wallet, rewards credits, and Bill Shield controls — all in one place.</p>
+        <span class="feature-badge">Coming 2027</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="plans">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Travel Plans</div>
+      <h2 class="section-title">Simple pricing.<br>Every destination.</h2>
+      <p class="section-subtitle">All plans are data-only, prepaid, and priced in Canadian dollars. No foreign exchange surprises.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card reveal">
+        <span class="plan-flag">🇺🇸</span>
+        <div class="plan-name">United States</div>
+        <p class="plan-desc">Best for cross-border trips and US travel.</p>
+        <div class="plan-from">From</div>
+        <div class="plan-price">$12 <span>CAD / plan</span></div>
+      </div>
+      <div class="plan-card reveal">
+        <span class="plan-flag">🇪🇺</span>
+        <div class="plan-name">Europe</div>
+        <p class="plan-desc">City breaks and multi-country Europe trips.</p>
+        <div class="plan-from">From</div>
+        <div class="plan-price">$16 <span>CAD / plan</span></div>
+      </div>
+      <div class="plan-card reveal">
+        <span class="plan-flag">🇲🇽</span>
+        <div class="plan-name">Mexico & Caribbean</div>
+        <p class="plan-desc">Resorts, cruises, and vacation data.</p>
+        <div class="plan-from">From</div>
+        <div class="plan-price">$19 <span>CAD / plan</span></div>
+      </div>
+      <div class="plan-card reveal">
+        <span class="plan-flag">🇨🇦</span>
+        <div class="plan-name">Canada Visitor</div>
+        <p class="plan-desc">For visitors needing data while in Canada.</p>
+        <div class="plan-from">From</div>
+        <div class="plan-price">$15 <span>CAD / plan</span></div>
+      </div>
+      <div class="plan-card reveal">
+        <span class="plan-flag">🌍</span>
+        <div class="plan-name">Global</div>
+        <p class="plan-desc">Multi-country and frequent travellers.</p>
+        <div class="plan-from">From</div>
+        <div class="plan-price">$25 <span>CAD / plan</span></div>
+      </div>
+    </div>
+    <p class="plans-note reveal">Plans are in preview — final pricing confirmed at 2027 launch. <a href="/plans.html">See full plan details →</a></p>
+  </div>
+</section>
+
+<!-- BILL SHIELD -->
+<section class="shield-section">
+  <div class="container">
+    <div class="shield-card reveal">
+      <div>
+        <div class="shield-icon-wrap">🛡️</div>
+        <h2 class="shield-title">Your Bill.<br><em>Your Control.</em></h2>
+        <p class="shield-body">Travel Bill Shield is built into every OctoNet plan. We will never charge you automatically — for anything. Every plan is fully prepaid.</p>
+        <ul class="shield-points">
+          <li>No automatic renewals</li>
+          <li>No overage charges</li>
+          <li>No hidden fees</li>
+          <li>No contract lock-in</li>
+          <li>Data stops when your plan ends — that is it</li>
+        </ul>
+      </div>
+      <div class="shield-visual">
+        <div class="shield-stat">
+          <div class="shield-stat-label">Automatic Charges</div>
+          <div class="shield-stat-value">$0.00</div>
+          <div class="shield-stat-sub">Always. No exceptions.</div>
+        </div>
+        <div class="shield-stat">
+          <div class="shield-stat-label">Surprise Fees</div>
+          <div class="shield-stat-value">Never</div>
+          <div class="shield-stat-sub">Protected by Bill Shield on every plan.</div>
+        </div>
+        <div class="shield-stat">
+          <div class="shield-stat-label">Contracts Required</div>
+          <div class="shield-stat-value">None</div>
+          <div class="shield-stat-sub">Prepaid. Cancel anytime. Nothing to cancel.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:0;">
+      <div class="section-eyebrow">The App</div>
+      <h2 class="section-title">OctoNet in your pocket.</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Available on iOS and Android. Built from the ground up to feel premium, simple, and honest.</p>
+    </div>
+    <div class="screenshots-scroll">
+      <div class="screenshot-item"><img src="/Simulator Screenshot - iPhone 17 Pro Max - 2026-05-25 at 18.52.15.png" alt="Home"></div>
+      <div class="screenshot-item"><img src="/Simulator Screenshot - iPhone 17 Pro Max - 2026-05-25 at 18.52.26.png" alt="Plans"></div>
+      <div class="screenshot-item"><img src="/Simulator Screenshot - iPhone 17 Pro Max - 2026-05-25 at 18.52.32.png" alt="OctoCare"></div>
+      <div class="screenshot-item"><img src="/Simulator Screenshot - iPhone 17 Pro Max - 2026-05-25 at 18.52.37.png" alt="NETPAY"></div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#waitlist" class="btn-primary">Join Waitlist for Early Access</a>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="waitlist-section" id="waitlist">
+  <div class="container">
+    <div class="waitlist-card reveal">
+      <div class="section-eyebrow" style="margin-bottom:16px;">Early Access</div>
+      <h2 class="waitlist-title">Be first in line<br>for 2027.</h2>
+      <p class="waitlist-sub">Join thousands of Canadians waiting for a better travel data experience. Free to join. No commitment.</p>
+      <div class="waitlist-form" id="waitlistForm">
+        <input type="text" id="wName" placeholder="Your first name (optional)">
+        <input type="email" id="wEmail" placeholder="Your email address" required>
+        <button class="btn-primary" onclick="submitWaitlist()">Join the OctoNet Waitlist →</button>
+      </div>
+      <div class="waitlist-success" id="waitlistSuccess">
+        🎉 You're on the list! We'll notify you the moment OctoNet goes live.
+      </div>
+      <p class="waitlist-note">No spam. No credit card. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+          <span class="footer-logo-name">OctoNet Mobility</span>
+        </div>
+        <p class="footer-tagline">Wireless Without Financial Stress. Travel eSIM plans built for Canadians. Launching 2027.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/octonetmobility/" class="social-btn" title="Instagram">📸</a>
+          <a href="https://www.facebook.com/profile.php?id=61589797323715" class="social-btn" title="Facebook">📘</a>
+          <a href="mailto:hello.octonetmobility@gmail.com" class="social-btn" title="Email">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/plans.html">Travel Plans</a></li>
+          <li><a href="/netpay.html">NETPAY</a></li>
+          <li><a href="/tools.html">Tools</a></li>
+          <li><a href="/coverage.html">Coverage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About OctoNet</a></li>
+          <li><a href="/support.html">OctoCare Support</a></li>
+          <li><a href="/security.html">Security</a></li>
+          <li><a href="mailto:hello.octonetmobility@gmail.com">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/privacy.html">Terms of Service</a></li>
+          <li><a href="/privacy.html">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">OctoNet Mobility · v1.0 Beta · Canadian-built · Projected 2027 Launch</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/privacy.html">Terms</a>
+        <a href="/security.html">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING SUPPORT -->
+<a href="/support.html" class="float-btn">🐙 OctoCare</a>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Waitlist submit
+function submitWaitlist() {
+  const email = document.getElementById('wEmail').value.trim();
+  const name  = document.getElementById('wName').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('wEmail').style.borderColor = 'rgba(255,80,80,0.5)';
+    return;
+  }
+  // Save to Firebase via fetch
+  fetch('https://firestore.googleapis.com/v1/projects/octonet-mobility/databases/(default)/documents/waitlist/' + encodeURIComponent(email), {
+    method:'PATCH',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      fields:{
+        email:{stringValue:email},
+        name:{stringValue:name},
+        source:{stringValue:'Website'},
+        version:{stringValue:'1.0 Beta'}
+      }
+    })
+  }).catch(()=>{});
+  // Show success regardless (graceful)
+  document.getElementById('waitlistForm').style.display = 'none';
+  document.getElementById('waitlistSuccess').style.display = 'block';
+}
+
+// Staggered card animations
+document.querySelectorAll('.features-grid .feature-card, .plans-grid .plan-card').forEach((el, i) => {
+  el.style.transitionDelay = (i * 0.08) + 's';
+});
+</script>
+</body>
+</html>
