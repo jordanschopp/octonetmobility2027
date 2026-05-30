@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build your exact travel eSIM plan with Octo Reimagined. Choose data, days, and see live CAD pricing.">
+<meta name="theme-color" content="#040E1C">
+<title>Octo Reimagined | OctoNet Mobility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#040E1C;--navy2:#071426;--navy3:#0A1E38;--card:rgba(10,28,54,0.92);--cyan:#12C9FF;--cyan2:#7DE7FF;--green:#1D9E75;--border:rgba(18,201,255,0.12);--muted:rgba(125,231,255,0.55);--text:#F0F8FF;--radius:22px;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--navy);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(18,201,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(18,201,255,0.035) 1px,transparent 1px);background-size:56px 56px;}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+section{padding:90px 0;position:relative;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);background:rgba(4,14,28,0.88);}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:36px;}
+.nav-logo-text{font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--text);letter-spacing:-0.3px;}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:10px;transition:color 0.2s,background 0.2s;}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.06);}
+.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:10px 22px;border-radius:12px;text-decoration:none;transition:opacity 0.2s,transform 0.15s;}
+.nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+.page-hero{padding:140px 0 80px;text-align:center;}
+.page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(18,201,255,0.08);border:1px solid rgba(18,201,255,0.18);color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+.page-title{font-family:var(--font-display);font-size:clamp(38px,5.5vw,68px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;}
+.page-title em{font-style:normal;color:var(--cyan);}
+.page-subtitle{font-size:18px;color:rgba(240,248,255,0.65);line-height:1.7;font-weight:300;max-width:580px;margin:0 auto;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:border-color 0.3s,transform 0.25s;}
+.card:hover{border-color:rgba(18,201,255,0.28);transform:translateY(-3px);}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;}
+.section-title{font-family:var(--font-display);font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.section-sub{font-size:17px;color:rgba(240,248,255,0.6);line-height:1.7;font-weight:300;max-width:560px;}
+.btn-primary{background:var(--cyan);color:#040E1C;font-weight:700;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 8px 32px rgba(18,201,255,0.25);display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-primary:hover{opacity:0.88;transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:var(--text);font-weight:600;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:1px solid var(--border);transition:background 0.2s,border-color 0.2s,transform 0.15s;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-secondary:hover{background:rgba(255,255,255,0.06);border-color:rgba(18,201,255,0.3);transform:translateY(-2px);}
+footer{border-top:1px solid var(--border);padding:60px 0 40px;background:rgba(4,14,28,0.8);}
+.footer-inner{max-width:1120px;margin:0 auto;padding:0 24px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border);}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.footer-logo img{height:32px;}
+.footer-logo-name{font-family:var(--font-display);font-weight:800;font-size:16px;}
+.footer-tagline{font-size:14px;color:rgba(240,248,255,0.45);line-height:1.6;font-weight:300;max-width:240px;}
+.footer-social{display:flex;gap:10px;margin-top:20px;}
+.social-btn{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;transition:background 0.2s,border-color 0.2s;}
+.social-btn:hover{background:rgba(18,201,255,0.10);border-color:rgba(18,201,255,0.2);}
+.footer-col h4{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{color:rgba(240,248,255,0.5);text-decoration:none;font-size:14px;transition:color 0.2s;}
+.footer-col ul a:hover{color:var(--text);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:32px;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:13px;color:rgba(240,248,255,0.35);}
+.footer-bottom-links{display:flex;gap:24px;}
+.footer-bottom-links a{font-size:13px;color:rgba(240,248,255,0.4);text-decoration:none;transition:color 0.2s;}
+.footer-bottom-links a:hover{color:var(--cyan);}
+.float-btn{position:fixed;bottom:28px;right:28px;z-index:99;background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:14px 22px;border-radius:16px;text-decoration:none;display:flex;align-items:center;gap:8px;box-shadow:0 8px 32px rgba(18,201,255,0.3);transition:transform 0.2s,box-shadow 0.2s;}
+.float-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(18,201,255,0.4);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.notice{background:rgba(18,201,255,0.06);border:1px solid rgba(18,201,255,0.15);border-radius:16px;padding:20px 24px;font-size:14px;color:rgba(240,248,255,0.65);line-height:1.6;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+@media(max-width:600px){section{padding:64px 0;}.footer-top{grid-template-columns:1fr;}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+      <span class="nav-logo-text">OctoNet Mobility</span>
+    </a>
+    <ul class="nav-links"><li><a href="/" >Home</a></li><li><a href="/plans.html" >Destinations</a></li><li><a href="/ocr.html" class=active>OCR</a></li><li><a href="/support.html" >OctoCare</a></li><li><a href="/netpay.html" >NETPAY</a></li><li><a href="/about.html" >Hub</a></li></ul>
+    <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-eyebrow">Octo Reimagined</div>
+    <h1 class="page-title">Build your exact<br><em>travel plan.</em></h1>
+    <p class="page-subtitle">No fixed plan sizes. Choose exactly how much data and how many days you need. The price calculates live in Canadian dollars.</p>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
+      <a href="/plan-builder.html" class="btn-primary">Open Plan Builder →</a>
+      <a href="/plans.html" class="btn-secondary">View Standard Plans</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+
+    <!-- What makes OCR different -->
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:64px;">
+      <div class="card reveal" style="border-color:rgba(18,201,255,0.25);">
+        <div style="font-size:32px;margin-bottom:14px;">⚙️</div>
+        <div style="font-family:var(--font-display);font-size:18px;font-weight:800;margin-bottom:8px;">Custom Data</div>
+        <p style="font-size:14px;color:rgba(240,248,255,0.65);line-height:1.65;">Choose exactly 3–50GB — no fixed sizes. Pay only for what you actually need.</p>
+      </div>
+      <div class="card reveal">
+        <div style="font-size:32px;margin-bottom:14px;">📅</div>
+        <div style="font-family:var(--font-display);font-size:18px;font-weight:800;margin-bottom:8px;">Custom Days</div>
+        <p style="font-size:14px;color:rgba(240,248,255,0.65);line-height:1.65;">Pick 7, 15, 30, or 60 day validity. Match your plan exactly to your trip length.</p>
+      </div>
+      <div class="card reveal">
+        <div style="font-size:32px;margin-bottom:14px;">💵</div>
+        <div style="font-family:var(--font-display);font-size:18px;font-weight:800;margin-bottom:8px;">Live CAD Pricing</div>
+        <p style="font-size:14px;color:rgba(240,248,255,0.65);line-height:1.65;">Price updates instantly as you adjust data and days. Always in Canadian dollars. No surprises.</p>
+      </div>
+      <div class="card reveal">
+        <div style="font-size:32px;margin-bottom:14px;">🛡️</div>
+        <div style="font-family:var(--font-display);font-size:18px;font-weight:800;margin-bottom:8px;">Bill Shield Included</div>
+        <p style="font-size:14px;color:rgba(240,248,255,0.65);line-height:1.65;">Every custom plan comes with Travel Bill Shield. Fully prepaid — no automatic charges ever.</p>
+      </div>
+    </div>
+
+    <!-- Interactive builder preview -->
+    <div class="reveal" style="margin-bottom:32px;text-align:center;">
+      <div class="section-eyebrow">Plan Builder Preview</div>
+      <h2 class="section-title">See it in action.</h2>
+      <p class="section-sub" style="margin:0 auto;">Drag the sliders to see how OCR pricing works. Full builder available in the app.</p>
+    </div>
+
+    <div class="card reveal" style="margin-bottom:64px;max-width:680px;margin-left:auto;margin-right:auto;">
+      <!-- Destination -->
+      <div style="margin-bottom:24px;">
+        <div style="font-size:10px;font-weight:800;letter-spacing:2px;color:var(--cyan);margin-bottom:12px;">DESTINATION</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;" id="destBtns">
+          <button onclick="setDest('usa',12,0.55,0.40,this)" style="background:rgba(18,201,255,0.15);border:1.5px solid rgba(18,201,255,0.5);color:var(--text);font-weight:700;font-size:13px;padding:10px 16px;border-radius:12px;cursor:pointer;font-family:var(--font-body);">🇺🇸 USA</button>
+          <button onclick="setDest('europe',16,0.70,0.50,this)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:13px;padding:10px 16px;border-radius:12px;cursor:pointer;font-family:var(--font-body);">🇪🇺 Europe</button>
+          <button onclick="setDest('mexico',19,0.85,0.55,this)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:13px;padding:10px 16px;border-radius:12px;cursor:pointer;font-family:var(--font-body);">🇲🇽 Mexico</button>
+          <button onclick="setDest('canada',15,0.65,0.45,this)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:13px;padding:10px 16px;border-radius:12px;cursor:pointer;font-family:var(--font-body);">🇨🇦 Canada</button>
+          <button onclick="setDest('global',25,1.10,0.70,this)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:13px;padding:10px 16px;border-radius:12px;cursor:pointer;font-family:var(--font-body);">🌍 Global</button>
+        </div>
+      </div>
+
+      <!-- Data slider -->
+      <div style="margin-bottom:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <div style="font-size:10px;font-weight:800;letter-spacing:2px;color:var(--cyan);">DATA</div>
+          <div style="font-family:var(--font-display);font-size:32px;font-weight:800;color:var(--cyan);" id="gbDisplay">10 GB</div>
+        </div>
+        <input type="range" id="gbSlider" min="3" max="50" value="10" oninput="updatePrice()" style="width:100%;accent-color:var(--cyan);cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:rgba(240,248,255,0.4);margin-top:4px;"><span>3GB</span><span>50GB</span></div>
+        <div style="font-size:13px;color:var(--muted);margin-top:8px;" id="usageHint">Normal vacation — social, browsing, photos</div>
+      </div>
+
+      <!-- Days -->
+      <div style="margin-bottom:28px;">
+        <div style="font-size:10px;font-weight:800;letter-spacing:2px;color:var(--cyan);margin-bottom:12px;">DAYS</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;" id="dayBtns">
+          <button onclick="setDays(7,this)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);font-weight:600;padding:14px 8px;border-radius:12px;cursor:pointer;font-family:var(--font-body);font-size:14px;">7<br><span style="font-size:10px;">days</span></button>
+          <button onclick="setDays(15,this)" style="background:rgba(18,201,255,0.15);border:1.5px solid rgba(18,201,255,0.5);color:var(--text);font-weight:700;padding:14px 8px;border-radius:12px;cursor:pointer;font-family:var(--font-body);font-size:14px;">15<br><span style="font-size:10px;">days</span></button>
+          <button onclick="setDays(30,this)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);font-weight:600;padding:14px 8px;border-radius:12px;cursor:pointer;font-family:var(--font-body);font-size:14px;">30<br><span style="font-size:10px;">days</span></button>
+          <button onclick="setDays(60,this)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--muted);font-weight:600;padding:14px 8px;border-radius:12px;cursor:pointer;font-family:var(--font-body);font-size:14px;">60<br><span style="font-size:10px;">days</span></button>
+        </div>
+      </div>
+
+      <!-- Price display -->
+      <div style="background:rgba(18,201,255,0.06);border:1px solid rgba(18,201,255,0.2);border-radius:18px;padding:24px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(240,248,255,0.5);margin-bottom:8px;">YOUR ESTIMATED PRICE</div>
+        <div style="font-family:var(--font-display);font-size:56px;font-weight:800;color:var(--cyan);line-height:1;" id="priceDisplay">$28</div>
+        <div style="font-size:14px;color:var(--muted);margin-top:6px;" id="priceDetail">$0.93/day · $2.80/GB · Prepaid</div>
+        <div style="margin-top:16px;background:rgba(29,158,117,0.10);border:1px solid rgba(29,158,117,0.25);border-radius:12px;padding:12px;font-size:13px;color:#8DFFE9;">
+          🛡️ Travel Bill Shield — no automatic charges. This plan is your only commitment.
+        </div>
+      </div>
+
+      <a href="/#waitlist" class="btn-primary" style="width:100%;justify-content:center;margin-top:16px;">Join Waitlist for This Plan →</a>
+    </div>
+
+    <!-- Example builds -->
+    <div class="reveal" style="margin-bottom:32px;">
+      <div class="section-eyebrow">Popular Builds</div>
+      <h2 class="section-title">Most common plans.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:48px;">
+
+      <div class="card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span style="font-size:28px;">🇺🇸</span>
+          <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$13</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px;">USA Weekend</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">3GB · 7 days</div>
+        <div style="font-size:12px;color:rgba(240,248,255,0.5);">Maps, messaging, and light browsing for a quick border trip.</div>
+      </div>
+      <div class="card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span style="font-size:28px;">🇺🇸</span>
+          <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$28</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px;">USA Classic</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">10GB · 30 days</div>
+        <div style="font-size:12px;color:rgba(240,248,255,0.5);">Most popular USA build for a 2-week trip.</div>
+      </div>
+      <div class="card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span style="font-size:28px;">🇪🇺</span>
+          <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$38</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px;">Europe Explorer</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">10GB · 30 days</div>
+        <div style="font-size:12px;color:rgba(240,248,255,0.5);">City breaks and multi-country Europe travel.</div>
+      </div>
+      <div class="card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span style="font-size:28px;">🇲🇽</span>
+          <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$26</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px;">Mexico Vacation</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">5GB · 15 days</div>
+        <div style="font-size:12px;color:rgba(240,248,255,0.5);">Resort and beach vacation data.</div>
+      </div>
+      <div class="card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span style="font-size:28px;">🌍</span>
+          <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$55</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px;">Global Pass</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">10GB · 30 days</div>
+        <div style="font-size:12px;color:rgba(240,248,255,0.5);">Multi-country trips with one eSIM.</div>
+      </div>
+      <div class="card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <span style="font-size:28px;">🇺🇸</span>
+          <span style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$73</span>
+        </div>
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:4px;">USA Power</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">50GB · 30 days</div>
+        <div style="font-size:12px;color:rgba(240,248,255,0.5);">Heavy users, hotspot, and work travel.</div>
+      </div>
+    </div>
+
+    <div class="notice reveal">
+      Octo Reimagined is a planned feature launching with paid plans in 2027. Preview pricing shown. Final pricing confirmed at launch.
+    </div>
+  </div>
+</section>
+
+<script>
+let destBase=12, destPerGB=0.55, destPerDay=0.40;
+let currentDays=15;
+
+function setDest(id, base, perGB, perDay, btn) {
+  destBase=base; destPerGB=perGB; destPerDay=perDay;
+  document.querySelectorAll('#destBtns button').forEach(b=>{
+    b.style.background='rgba(255,255,255,0.06)';
+    b.style.border='1px solid var(--border)';
+    b.style.color='var(--muted)';
+    b.style.fontWeight='600';
+  });
+  btn.style.background='rgba(18,201,255,0.15)';
+  btn.style.border='1.5px solid rgba(18,201,255,0.5)';
+  btn.style.color='var(--text)';
+  btn.style.fontWeight='700';
+  updatePrice();
+}
+
+function setDays(d, btn) {
+  currentDays=d;
+  document.querySelectorAll('#dayBtns button').forEach(b=>{
+    b.style.background='rgba(255,255,255,0.06)';
+    b.style.border='1px solid var(--border)';
+    b.style.color='var(--muted)';
+    b.style.fontWeight='600';
+  });
+  btn.style.background='rgba(18,201,255,0.15)';
+  btn.style.border='1.5px solid rgba(18,201,255,0.5)';
+  btn.style.color='var(--text)';
+  btn.style.fontWeight='700';
+  updatePrice();
+}
+
+function updatePrice() {
+  const gb = parseInt(document.getElementById('gbSlider').value);
+  document.getElementById('gbDisplay').textContent = gb + ' GB';
+  const raw = destBase + (gb-3)*destPerGB + (currentDays-7)*destPerDay;
+  const discount = gb>20?0.88:gb>10?0.94:1.0;
+  const price = Math.max(Math.round(raw*discount), destBase);
+  const perDay = (price/currentDays).toFixed(2);
+  const perGB = (price/gb).toFixed(2);
+  document.getElementById('priceDisplay').textContent = '$'+price;
+  document.getElementById('priceDetail').textContent = '$'+perDay+'/day · $'+perGB+'/GB · Prepaid';
+  const hints = gb<=5?'Light use — maps, messages, email':gb<=10?'Normal vacation — social, browsing, photos':gb<=20?'Heavy user — hotspot, video calls, work':'Power user — streaming, heavy hotspot';
+  document.getElementById('usageHint').textContent = hints;
+}
+updatePrice();
+</script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+          <span class="footer-logo-name">OctoNet Mobility</span>
+        </div>
+        <p class="footer-tagline">Wireless Without Financial Stress. Travel eSIM plans built for Canadians. Launching 2027.</p>
+        <div style="margin-top:14px;">
+          <span style="background:rgba(18,201,255,0.10);border:1px solid rgba(18,201,255,0.2);color:var(--cyan);font-size:11px;font-weight:700;padding:6px 14px;border-radius:999px;">Launching in 2027</span>
+        </div>
+        <div class="footer-social" style="margin-top:16px;">
+          <a href="https://www.instagram.com/octonetmobility/" class="social-btn">📸</a>
+          <a href="https://www.facebook.com/profile.php?id=61589797323715" class="social-btn">📘</a>
+          <a href="mailto:hello.octonetmobility@gmail.com" class="social-btn">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul>
+        <li><a href="/plans.html">Destinations</a></li>
+        <li><a href="/ocr.html">Octo Reimagined</a></li>
+        <li><a href="/netpay.html">NETPAY</a></li>
+        <li><a href="/tools.html">Tools</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/about.html">About OctoNet</a></li>
+        <li><a href="/road-to-2027.html">Road to 2027</a></li>
+        <li><a href="/support.html">OctoCare Support</a></li>
+        <li><a href="mailto:hello.octonetmobility@gmail.com">Contact Us</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/privacy.html">Terms of Service</a></li>
+        <li><a href="/privacy.html">Refund Policy</a></li>
+        <li><a href="/security.html">Security</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">OctoNet Mobility · v1.0 Beta · Canadian-built · Launching 2027</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/privacy.html">Terms</a>
+        <a href="/security.html">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="/support.html" class="float-btn">🐙 OctoCare</a>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
+</html>

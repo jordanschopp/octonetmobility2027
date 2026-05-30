@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Track OctoNet Mobility progress toward the 2027 launch. Milestones, status, and transparency.">
+<meta name="theme-color" content="#040E1C">
+<title>Road to 2027 | OctoNet Mobility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#040E1C;--navy2:#071426;--navy3:#0A1E38;--card:rgba(10,28,54,0.92);--cyan:#12C9FF;--cyan2:#7DE7FF;--green:#1D9E75;--border:rgba(18,201,255,0.12);--muted:rgba(125,231,255,0.55);--text:#F0F8FF;--radius:22px;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--navy);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(18,201,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(18,201,255,0.035) 1px,transparent 1px);background-size:56px 56px;}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+section{padding:90px 0;position:relative;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);background:rgba(4,14,28,0.88);}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:36px;}
+.nav-logo-text{font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--text);letter-spacing:-0.3px;}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:10px;transition:color 0.2s,background 0.2s;}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.06);}
+.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:10px 22px;border-radius:12px;text-decoration:none;transition:opacity 0.2s,transform 0.15s;}
+.nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+.page-hero{padding:140px 0 80px;text-align:center;}
+.page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(18,201,255,0.08);border:1px solid rgba(18,201,255,0.18);color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+.page-title{font-family:var(--font-display);font-size:clamp(38px,5.5vw,68px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;}
+.page-title em{font-style:normal;color:var(--cyan);}
+.page-subtitle{font-size:18px;color:rgba(240,248,255,0.65);line-height:1.7;font-weight:300;max-width:580px;margin:0 auto;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:border-color 0.3s,transform 0.25s;}
+.card:hover{border-color:rgba(18,201,255,0.28);transform:translateY(-3px);}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;}
+.section-title{font-family:var(--font-display);font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.section-sub{font-size:17px;color:rgba(240,248,255,0.6);line-height:1.7;font-weight:300;max-width:560px;}
+.btn-primary{background:var(--cyan);color:#040E1C;font-weight:700;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 8px 32px rgba(18,201,255,0.25);display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-primary:hover{opacity:0.88;transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:var(--text);font-weight:600;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:1px solid var(--border);transition:background 0.2s,border-color 0.2s,transform 0.15s;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-secondary:hover{background:rgba(255,255,255,0.06);border-color:rgba(18,201,255,0.3);transform:translateY(-2px);}
+footer{border-top:1px solid var(--border);padding:60px 0 40px;background:rgba(4,14,28,0.8);}
+.footer-inner{max-width:1120px;margin:0 auto;padding:0 24px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border);}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.footer-logo img{height:32px;}
+.footer-logo-name{font-family:var(--font-display);font-weight:800;font-size:16px;}
+.footer-tagline{font-size:14px;color:rgba(240,248,255,0.45);line-height:1.6;font-weight:300;max-width:240px;}
+.footer-social{display:flex;gap:10px;margin-top:20px;}
+.social-btn{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;transition:background 0.2s,border-color 0.2s;}
+.social-btn:hover{background:rgba(18,201,255,0.10);border-color:rgba(18,201,255,0.2);}
+.footer-col h4{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{color:rgba(240,248,255,0.5);text-decoration:none;font-size:14px;transition:color 0.2s;}
+.footer-col ul a:hover{color:var(--text);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:32px;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:13px;color:rgba(240,248,255,0.35);}
+.footer-bottom-links{display:flex;gap:24px;}
+.footer-bottom-links a{font-size:13px;color:rgba(240,248,255,0.4);text-decoration:none;transition:color 0.2s;}
+.footer-bottom-links a:hover{color:var(--cyan);}
+.float-btn{position:fixed;bottom:28px;right:28px;z-index:99;background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:14px 22px;border-radius:16px;text-decoration:none;display:flex;align-items:center;gap:8px;box-shadow:0 8px 32px rgba(18,201,255,0.3);transition:transform 0.2s,box-shadow 0.2s;}
+.float-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(18,201,255,0.4);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.notice{background:rgba(18,201,255,0.06);border:1px solid rgba(18,201,255,0.15);border-radius:16px;padding:20px 24px;font-size:14px;color:rgba(240,248,255,0.65);line-height:1.6;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+@media(max-width:600px){section{padding:64px 0;}.footer-top{grid-template-columns:1fr;}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+      <span class="nav-logo-text">OctoNet Mobility</span>
+    </a>
+    <ul class="nav-links"><li><a href="/" >Home</a></li><li><a href="/plans.html" >Destinations</a></li><li><a href="/ocr.html" >OCR</a></li><li><a href="/support.html" >OctoCare</a></li><li><a href="/netpay.html" >NETPAY</a></li><li><a href="/about.html" >Hub</a></li></ul>
+    <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-eyebrow">Road to 2027</div>
+    <h1 class="page-title">Building OctoNet<br><em>in public.</em></h1>
+    <p class="page-subtitle">We believe in transparency. Here is exactly where OctoNet Mobility stands on the path to launch — updated as we hit each milestone.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+
+    <!-- Progress overview -->
+    <div class="card reveal" style="margin-bottom:48px;max-width:720px;margin-left:auto;margin-right:auto;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--cyan);margin-bottom:6px;">OVERALL PROGRESS</div>
+          <div style="font-size:15px;color:rgba(240,248,255,0.65);">4 of 11 milestones complete</div>
+        </div>
+        <div style="font-family:var(--font-display);font-size:52px;font-weight:800;color:var(--cyan);">36%</div>
+      </div>
+      <!-- Progress bar -->
+      <div style="background:rgba(255,255,255,0.08);border-radius:999px;height:10px;margin-bottom:20px;overflow:hidden;">
+        <div style="background:linear-gradient(90deg,var(--cyan),#1D9E75);height:10px;width:36%;border-radius:999px;box-shadow:0 0 12px rgba(18,201,255,0.4);transition:width 1s ease;"></div>
+      </div>
+      <!-- Status chips -->
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#1D9E75;"><span style="width:8px;height:8px;border-radius:50%;background:#1D9E75;display:inline-block;"></span>4 Complete</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#F59E0B;"><span style="width:8px;height:8px;border-radius:50%;background:#F59E0B;display:inline-block;"></span>3 In Progress</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(240,248,255,0.4);"><span style="width:8px;height:8px;border-radius:50%;background:rgba(240,248,255,0.2);display:inline-block;"></span>4 Upcoming</div>
+      </div>
+    </div>
+
+    <!-- Milestone list -->
+    <div class="card reveal" style="margin-bottom:48px;max-width:720px;margin-left:auto;margin-right:auto;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--cyan);margin-bottom:24px;">MILESTONES</div>
+      
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(29,158,117,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#1D9E75;flex-shrink:0;">✓</div>
+          <div style="width:2px;height:32px;background:#1D9E75;margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Beta App — iOS & Android</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Live on TestFlight and Android Studio. Full feature preview.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(29,158,117,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#1D9E75;flex-shrink:0;">✓</div>
+          <div style="width:2px;height:32px;background:#1D9E75;margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Website & Plan Builder</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">octonetmobility.pages.dev is live with premium redesign.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(29,158,117,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#1D9E75;flex-shrink:0;">✓</div>
+          <div style="width:2px;height:32px;background:#1D9E75;margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">OctoCare 2.0</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Support hub live. AI assistant being improved.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(29,158,117,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#1D9E75;flex-shrink:0;">✓</div>
+          <div style="width:2px;height:32px;background:#1D9E75;margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Waitlist Open</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Taking signups. Join to be first at launch.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#F59E0B;flex-shrink:0;">◷</div>
+          <div style="width:2px;height:32px;background:#F59E0B;margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Legal Review</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Terms of Service, Privacy Policy, and Refund Policy finalization.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#F59E0B;flex-shrink:0;">◷</div>
+          <div style="width:2px;height:32px;background:#F59E0B;margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Supplier Agreement</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Finalising eSIM partner contract for Canadian market.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#F59E0B;flex-shrink:0;">◷</div>
+          <div style="width:2px;height:32px;background:#F59E0B;margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);">Payment Processing</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Provider confirmation and integration underway.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:rgba(240,248,255,0.4);flex-shrink:0;">○</div>
+          <div style="width:2px;height:32px;background:rgba(240,248,255,0.1);margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:rgba(240,248,255,0.5);">App Store Submission</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">iOS App Store listing. Listing copy and screenshots ready.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:rgba(240,248,255,0.4);flex-shrink:0;">○</div>
+          <div style="width:2px;height:32px;background:rgba(240,248,255,0.1);margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:rgba(240,248,255,0.5);">Google Play Submission</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Android app public release on Google Play.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:rgba(240,248,255,0.4);flex-shrink:0;">○</div>
+          <div style="width:2px;height:32px;background:rgba(240,248,255,0.1);margin:4px 0 4px 13px;opacity:0.4;"></div>
+        </div>
+        <div style="padding-bottom:4px;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:rgba(240,248,255,0.5);">First Paid Plans Live</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">Target Q1–Q2 2027. Canada first.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div>
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:rgba(240,248,255,0.4);flex-shrink:0;">○</div>
+          
+        </div>
+        <div style="padding-bottom:0;">
+          <div style="font-family:var(--font-display);font-size:15px;font-weight:700;color:rgba(240,248,255,0.5);">Full Public Launch</div>
+          <div style="font-size:13px;color:rgba(240,248,255,0.5);margin-top:2px;line-height:1.5;">OctoNet Mobility open to all Canadian customers.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Target date -->
+    <div class="card reveal" style="max-width:720px;margin:0 auto 48px;text-align:center;border-color:rgba(18,201,255,0.2);">
+      <div style="font-size:44px;margin-bottom:16px;">🚀</div>
+      <div style="font-family:var(--font-display);font-size:28px;font-weight:800;margin-bottom:10px;">Target Launch: 2027</div>
+      <p style="font-size:15px;color:rgba(240,248,255,0.65);line-height:1.7;max-width:440px;margin:0 auto 24px;">Canada first. Travel eSIM plans, OctoCare support, and NETPAY preview — all in one app.</p>
+      <a href="/#waitlist" class="btn-primary" style="display:inline-flex;">Join the Waitlist →</a>
+    </div>
+
+    <div class="notice reveal" style="max-width:720px;margin:0 auto;">
+      This page is updated as OctoNet Mobility progresses. Last updated May 2026. For questions, email hello.octonetmobility@gmail.com
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+          <span class="footer-logo-name">OctoNet Mobility</span>
+        </div>
+        <p class="footer-tagline">Wireless Without Financial Stress. Travel eSIM plans built for Canadians. Launching 2027.</p>
+        <div style="margin-top:14px;">
+          <span style="background:rgba(18,201,255,0.10);border:1px solid rgba(18,201,255,0.2);color:var(--cyan);font-size:11px;font-weight:700;padding:6px 14px;border-radius:999px;">Launching in 2027</span>
+        </div>
+        <div class="footer-social" style="margin-top:16px;">
+          <a href="https://www.instagram.com/octonetmobility/" class="social-btn">📸</a>
+          <a href="https://www.facebook.com/profile.php?id=61589797323715" class="social-btn">📘</a>
+          <a href="mailto:hello.octonetmobility@gmail.com" class="social-btn">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul>
+        <li><a href="/plans.html">Destinations</a></li>
+        <li><a href="/ocr.html">Octo Reimagined</a></li>
+        <li><a href="/netpay.html">NETPAY</a></li>
+        <li><a href="/tools.html">Tools</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/about.html">About OctoNet</a></li>
+        <li><a href="/road-to-2027.html">Road to 2027</a></li>
+        <li><a href="/support.html">OctoCare Support</a></li>
+        <li><a href="mailto:hello.octonetmobility@gmail.com">Contact Us</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/privacy.html">Terms of Service</a></li>
+        <li><a href="/privacy.html">Refund Policy</a></li>
+        <li><a href="/security.html">Security</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">OctoNet Mobility · v1.0 Beta · Canadian-built · Launching 2027</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/privacy.html">Terms</a>
+        <a href="/security.html">Security</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="/support.html" class="float-btn">🐙 OctoCare</a>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+</body>
+</html>
