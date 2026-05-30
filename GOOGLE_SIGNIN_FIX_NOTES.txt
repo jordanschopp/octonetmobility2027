@@ -1,0 +1,1 @@
+Fixed Google Sign-In popup issue by changing Cross-Origin-Opener-Policy to same-origin-allow-popups and allowing Google auth scripts/connects in CSP. Upload this whole zip to Cloudflare Pages.

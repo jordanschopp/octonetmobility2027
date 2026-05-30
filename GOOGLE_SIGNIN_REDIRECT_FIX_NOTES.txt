@@ -1,0 +1,1 @@
+Changed Google sign-in from popup to redirect. This is more reliable on Cloudflare Pages and avoids browser popup/cross-origin issues. If auth/internal-error continues, add the exact Pages URL shown in the browser address bar to Firebase Authentication > Settings > Authorized domains.

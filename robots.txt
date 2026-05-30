@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://octonetmobility.pages.dev/sitemap.xml

@@ -1,0 +1,7 @@
+OctoNet Smooth Performance Build\nSame UI direction with lighter blur, shadows, animation load, and smoother Chrome/mobile scrolling.\n
+Google Sign-In update:
+- Google button now uses Firebase GoogleAuthProvider with popup sign-in.
+- If the popup is blocked, it falls back to redirect sign-in.
+- Account page dashboard updates after Firebase sign-in.
+- In Firebase Console, enable Authentication > Sign-in method > Google.
+- In Firebase Authentication > Settings > Authorized domains, add your Cloudflare Pages domain, for example: octonetmobility.pages.dev and any custom domain you use.

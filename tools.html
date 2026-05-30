@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="assets/favicon-256.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#071426" />
+  <title>Tools | OctoNet Mobility</title>
+  <meta name="description" content="OctoNet Mobility tools for eSIM compatibility, roaming savings, plan recommendations, and setup guidance." />
+</head>
+<body>
+
+<header class="octo-clean-header">
+  <div class="octo-clean-nav">
+    <a class="octo-clean-logo" href="index.html" aria-label="OctoNet Mobility Home">
+      <img src="assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+    </a>
+
+    <nav class="octo-clean-links" aria-label="Main navigation">
+        <a class="octo-nav-link" href="index.html">Home</a>
+        <a class="octo-nav-link" href="plans.html">Plans</a>
+        <a class="octo-nav-link active" href="tools.html">Tools</a>
+        <a class="octo-nav-link" href="netpay.html">NETPAY</a>
+        <a class="octo-nav-link" href="coverage.html">Coverage</a>
+        <a class="octo-nav-link" href="about.html">About</a>
+        <a class="octo-nav-link" href="support.html">Support</a>
+        <a class="octo-nav-link" href="security.html">Security</a>
+    </nav>
+
+    
+<button class="octo-signin-trigger" type="button" data-open-signin>Sign In</button>
+
+  </div>
+</header>
+
+<main>
+<section class="page-hero section">
+  <span class="eyebrow">Tools • Beta Preview</span>
+  <h1>Travel tools built for clarity.</h1>
+  <p>Use OctoNet tools to estimate roaming savings, check eSIM readiness, find a plan style, and review setup guidance before launch.</p>
+</section>
+
+<section class="section tool-section">
+  <div class="two-column">
+    <article class="info-card tool-card">
+      <div class="support-icon">📱</div>
+      <h3>Device Compatibility</h3>
+      <p>Check if your phone may support travel eSIM service. Final compatibility depends on exact model, region, and carrier lock status.</p>
+      <label for="deviceName">Phone model</label>
+      <input id="deviceName" type="text" placeholder="Example: iPhone 14 Pro, Galaxy S24, Pixel 8" />
+      <label class="checkline"><input id="deviceUnlocked" type="checkbox" /> My phone is carrier unlocked</label>
+      <button class="primary-button full" id="checkDeviceBtn" type="button">Check Compatibility</button>
+      <div class="support-result hidden" id="deviceResult"></div>
+    </article>
+
+    <article class="info-card tool-card">
+      <div class="support-icon">💸</div>
+      <h3>Roaming Savings Calculator</h3>
+      <p>Compare daily roaming charges against an OctoNet travel eSIM preview plan.</p>
+      <label for="roamingCost">Carrier roaming cost per day</label>
+      <input id="roamingCost" type="number" inputmode="decimal" placeholder="Example: 15" />
+      <label for="travelDays">Travel days</label>
+      <input id="travelDays" type="number" inputmode="numeric" placeholder="Example: 10" />
+      <label for="octonetPrice">OctoNet plan price</label>
+      <input id="octonetPrice" type="number" inputmode="decimal" value="28" />
+      <button class="primary-button full" id="calculateSavingsBtn" type="button">Calculate Savings</button>
+      <div class="support-result hidden" id="savingsResult"></div>
+    </article>
+  </div>
+
+  <div class="plan-zone">
+    <div class="section-heading">
+      <span class="eyebrow">Plan Finder</span>
+      <h2>Find your best plan style.</h2>
+      <p>Choose a travel style and get a simple OctoNet plan suggestion.</p>
+    </div>
+    <div class="info-grid recommendation-grid">
+      <button class="recommendation-card" data-recommendation="Recommended: Travel Starter — 3GB / 15 Days. Best for maps, messaging, and light browsing."><strong>Light Traveler</strong><span>Maps, messaging, light browsing</span></button>
+      <button class="recommendation-card" data-recommendation="Recommended: Travel Plus — 10GB / 30 Days. Best for vacation photos, social media, and everyday use."><strong>Vacation Traveler</strong><span>Photos, social media, daily use</span></button>
+      <button class="recommendation-card" data-recommendation="Recommended: Travel Max — 20GB / 30 Days. Best for hotspot, work, video calls, and heavier use."><strong>Heavy Data User</strong><span>Hotspot, work, video calls</span></button>
+    </div>
+    <div class="support-result hidden" id="recommendationResult"></div>
+  </div>
+
+  <div class="two-column plan-zone">
+    <article class="info-card setup-card">
+      <h3>iPhone Setup Guide</h3>
+      <ol><li>Open Settings.</li><li>Tap Cellular.</li><li>Tap Add eSIM.</li><li>Scan QR code or use carrier activation.</li><li>Turn on data roaming for the travel line.</li></ol>
+    </article>
+    <article class="info-card setup-card">
+      <h3>Samsung / Android Setup Guide</h3>
+      <ol><li>Open Settings.</li><li>Go to Connections.</li><li>Tap SIM Manager.</li><li>Add eSIM.</li><li>Scan QR code and enable mobile data.</li></ol>
+    </article>
+  </div>
+  <div class="notice-card support-notice">These tools are estimates and beta previews. Compatibility, coverage, taxes, hotspot rules, and plan availability may change before launch.</div>
+</section>
+</main>
+<footer class="footer">
+  <div class="footer-brand">
+    <img class="footer-logo" src="assets/octonet-mobility-logo.png" alt="OctoNet Mobility logo" />
+    <p>Wireless Without Financial Stress</p>
+  </div>
+  <div class="footer-community">
+    <span class="community-title">Community</span>
+    <div class="community-links">
+      <a href="#" aria-label="OctoNet WhatsApp">WhatsApp</a>
+      <a href="https://www.facebook.com/profile.php?id=61589797323715" target="_blank" rel="noopener noreferrer" aria-label="OctoNet Facebook">Facebook</a>
+      <a href="https://www.instagram.com/octonetmobility/" target="_blank" rel="noopener noreferrer" aria-label="OctoNet Instagram">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="plans.html">Plans</a>
+    <a href="tools.html">Tools</a>
+    <a href="netpay.html">NETPAY</a>
+    <a href="support.html">Support</a>
+    <a href="security.html">Security</a>
+    <a href="privacy.html">Privacy &amp; Terms</a>
+    <span>Version 1.0 Beta</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OCTONET REAL FIREBASE SIGN IN MODAL -->
+<div class="octonet-signin-modal" id="signinModal" aria-hidden="true">
+  <div class="octonet-signin-card" role="dialog" aria-modal="true" aria-labelledby="signinTitle">
+    <button class="signin-close-btn" type="button" data-close-signin aria-label="Close sign in">✕</button>
+
+    <div class="signin-logo">🐙</div>
+
+    <h2 id="signinTitle">Welcome Back</h2>
+    <p id="signinDesc">Sign in to manage your eSIMs, billing, account settings, and OctoCare tools.</p>
+
+    <form class="signin-form">
+      <div id="signinMessage" class="signin-message"></div>
+
+      <input id="signinEmail" type="email" placeholder="Email Address" autocomplete="email">
+      <input id="signinPassword" type="password" placeholder="Password" autocomplete="current-password">
+
+      <button id="signinSubmitBtn" type="submit" class="signin-main-btn">Sign In</button>
+
+      <div class="signin-divider"><span>or continue with</span></div>
+
+      <div class="signin-socials">
+        <button id="googleSigninBtn" type="button">Google</button>
+        <button id="appleSigninBtn" type="button">Apple</button>
+      </div>
+
+      <div class="signin-footer-links">
+        <a href="#" id="createAccountBtn">Create Account</a>
+        <a href="#" id="forgotPasswordBtn">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+</div>
+<script type="module" src="signin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+Contact: mailto:hello.octonetmobility@gmail.com
+Preferred-Languages: en
+Canonical: https://octonetmobility.pages.dev/.well-known/security.txt
+Policy: https://octonetmobility.pages.dev/security.html
+Hiring: https://octonetmobility.pages.dev/about.html
