@@ -1,168 +1,437 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Plans | OctoNet Mobility</title>
-<link href="styles.css" rel="stylesheet"/>
-<link href="favicon.ico" rel="icon" sizes="any"/>
-<link href="assets/favicon-256.png" rel="icon" type="image/png"/>
-<link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/>
-<meta content="#071426" name="theme-color"/>
-<meta content="OctoNet Mobility — customer-first travel eSIM and mobile connectivity, built around clarity, support, and account security." name="description"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse OctoNet Mobility travel eSIM plans for USA, Europe, Mexico, Canada, and Global. Priced in CAD.">
+<meta name="theme-color" content="#040E1C">
+<title>Travel Plans | OctoNet Mobility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#040E1C;--navy2:#071426;--navy3:#0A1E38;--card:rgba(10,28,54,0.92);--cyan:#12C9FF;--cyan2:#7DE7FF;--green:#1D9E75;--border:rgba(18,201,255,0.12);--muted:rgba(125,231,255,0.55);--text:#F0F8FF;--radius:22px;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--navy);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(18,201,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(18,201,255,0.035) 1px,transparent 1px);background-size:56px 56px;}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+section{padding:90px 0;position:relative;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);background:rgba(4,14,28,0.88);}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:36px;}
+.nav-logo-text{font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--text);letter-spacing:-0.3px;}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:10px;transition:color 0.2s,background 0.2s;}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.06);}
+.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:10px 22px;border-radius:12px;text-decoration:none;transition:opacity 0.2s,transform 0.15s;}
+.nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+.page-hero{padding:140px 0 80px;text-align:center;}
+.page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(18,201,255,0.08);border:1px solid rgba(18,201,255,0.18);color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+.page-title{font-family:var(--font-display);font-size:clamp(38px,5.5vw,68px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;}
+.page-title em{font-style:normal;color:var(--cyan);}
+.page-subtitle{font-size:18px;color:rgba(240,248,255,0.65);line-height:1.7;font-weight:300;max-width:580px;margin:0 auto;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:border-color 0.3s,transform 0.25s;}
+.card:hover{border-color:rgba(18,201,255,0.28);transform:translateY(-3px);}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;}
+.section-title{font-family:var(--font-display);font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.section-sub{font-size:17px;color:rgba(240,248,255,0.6);line-height:1.7;font-weight:300;max-width:560px;}
+.btn-primary{background:var(--cyan);color:#040E1C;font-weight:700;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 8px 32px rgba(18,201,255,0.25);display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-primary:hover{opacity:0.88;transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:var(--text);font-weight:600;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:1px solid var(--border);transition:background 0.2s,border-color 0.2s,transform 0.15s;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-secondary:hover{background:rgba(255,255,255,0.06);border-color:rgba(18,201,255,0.3);transform:translateY(-2px);}
+footer{border-top:1px solid var(--border);padding:60px 0 40px;background:rgba(4,14,28,0.8);}
+.footer-inner{max-width:1120px;margin:0 auto;padding:0 24px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border);}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.footer-logo img{height:32px;}
+.footer-logo-name{font-family:var(--font-display);font-weight:800;font-size:16px;}
+.footer-tagline{font-size:14px;color:rgba(240,248,255,0.45);line-height:1.6;font-weight:300;max-width:240px;}
+.footer-social{display:flex;gap:10px;margin-top:20px;}
+.social-btn{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;transition:background 0.2s,border-color 0.2s;}
+.social-btn:hover{background:rgba(18,201,255,0.10);border-color:rgba(18,201,255,0.2);}
+.footer-col h4{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{color:rgba(240,248,255,0.5);text-decoration:none;font-size:14px;transition:color 0.2s;}
+.footer-col ul a:hover{color:var(--text);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:32px;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:13px;color:rgba(240,248,255,0.35);}
+.footer-bottom-links{display:flex;gap:24px;}
+.footer-bottom-links a{font-size:13px;color:rgba(240,248,255,0.4);text-decoration:none;transition:color 0.2s;}
+.footer-bottom-links a:hover{color:var(--cyan);}
+.float-btn{position:fixed;bottom:28px;right:28px;z-index:99;background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:14px 22px;border-radius:16px;text-decoration:none;display:flex;align-items:center;gap:8px;box-shadow:0 8px 32px rgba(18,201,255,0.3);transition:transform 0.2s,box-shadow 0.2s;}
+.float-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(18,201,255,0.4);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.notice{background:rgba(18,201,255,0.06);border:1px solid rgba(18,201,255,0.15);border-radius:16px;padding:20px 24px;font-size:14px;color:rgba(240,248,255,0.65);line-height:1.6;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+@media(max-width:600px){section{padding:64px 0;}.footer-top{grid-template-columns:1fr;}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+
 </head>
 <body>
-
-<header class="octo-clean-header">
-  <div class="octo-clean-nav">
-    <a class="octo-clean-logo" href="index.html" aria-label="OctoNet Mobility Home">
-      <img src="assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+      <span class="nav-logo-text">OctoNet Mobility</span>
     </a>
-
-    <nav class="octo-clean-links" aria-label="Main navigation">
-        <a class="octo-nav-link" href="index.html">Home</a>
-        <a class="octo-nav-link active" href="plans.html">Plans</a>
-        <a class="octo-nav-link" href="tools.html">Tools</a>
-        <a class="octo-nav-link" href="netpay.html">NETPAY</a>
-        <a class="octo-nav-link" href="coverage.html">Coverage</a>
-        <a class="octo-nav-link" href="about.html">About</a>
-        <a class="octo-nav-link" href="support.html">Support</a>
-        <a class="octo-nav-link" href="security.html">Security</a>
-    </nav>
-
-    
-<button class="octo-signin-trigger" type="button" data-open-signin>Sign In</button>
-
+    <ul class="nav-links">
+      <li><a href="/plans.html" class=active>Plans</a></li>
+      <li><a href="/netpay.html" >NETPAY</a></li>
+      <li><a href="/about.html" >About</a></li>
+      <li><a href="/support.html" >Support</a></li>
+    </ul>
+    <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
   </div>
-</header>
+</nav>
 
-
-  <!-- Plan Builder Banner -->
-  <div style="max-width:1180px;margin:0 auto;padding:0 24px 0;position:relative;z-index:2;">
-    <div style="background:linear-gradient(135deg,rgba(18,201,255,0.10),rgba(29,158,117,0.08));border:1px solid rgba(18,201,255,0.22);border-radius:20px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;">
-      <div>
-        <div style="font-size:11px;color:#12c9ff;font-weight:800;letter-spacing:0.08em;margin-bottom:6px;">✦ NEW</div>
-        <div style="font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:4px;">Build Your Own Plan</div>
-        <div style="font-size:14px;color:#8aafc8;">Pick your exact GB and days — we calculate your price in real time.</div>
-      </div>
-      <a href="plan-builder.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;background:linear-gradient(135deg,#03bff8,#63ddff);color:#001321;font-weight:900;font-size:0.95rem;text-decoration:none;white-space:nowrap;">
-        Try Plan Builder →
-      </a>
+<section class="page-hero">
+  <div class="container">
+    <div class="page-eyebrow">Travel Plans</div>
+    <h1 class="page-title">Simple pricing.<br><em>Every destination.</em></h1>
+    <p class="page-subtitle">All plans are data-only, prepaid, and priced in Canadian dollars. No foreign exchange surprises. No contracts.</p>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
+      <a href="/plan-builder.html" class="btn-primary">Build Custom Plan →</a>
+      <a href="/#waitlist" class="btn-secondary">Join Waitlist</a>
     </div>
   </div>
-  <main>
-<section class="page-hero section"><span class="eyebrow">Plans</span><h1>Travel eSIM plans.</h1><p>Simple planned CAD pricing for USA, Europe, Mexico &amp; Caribbean, Canada Visitor, and Global travel. No 1GB plans.</p></section><section class="section">
-<div class="plan-zone" id="usa"><h3>USA Travel eSIM</h3><div class="plans-grid">
-<article class="plan-card"><span>Starter</span><h4>Travel Starter</h4><p>3GB • 15 days</p><strong>$12 CAD</strong><small>Weekend trips, maps, messaging, and light browsing.</small><button aria-controls="plan-details-1" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-1"><p><strong>Includes: </strong>3GB • 15 days • $12 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Weekend trips, maps, messaging, and light browsing.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Basic</span><h4>Travel Basic</h4><p>5GB • 30 days</p><strong>$18 CAD</strong><small>Light vacation use and everyday travel basics.</small><button aria-controls="plan-details-2" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-2"><p><strong>Includes: </strong>5GB • 30 days • $18 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Light vacation use and everyday travel basics.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card featured"><span>Best Pick</span><h4>Travel Plus</h4><p>10GB • 30 days</p><strong>$28 CAD</strong><small>Main USA pick for most travellers.</small><button aria-controls="plan-details-3" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-3"><p><strong>Includes: </strong>10GB • 30 days • $28 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Main USA pick for most travellers.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Max</span><h4>Travel Max</h4><p>20GB • 30 days</p><strong>$45 CAD</strong><small>Heavy users, hotspot needs, and work travel.</small><button aria-controls="plan-details-4" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-4"><p><strong>Includes: </strong>20GB • 30 days • $45 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Heavy users, hotspot needs, and work travel.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Ultra</span><h4>Travel Ultra</h4><p>50GB • 30 days</p><strong>$78 CAD</strong><small>Long trips and high-data travellers.</small><button aria-controls="plan-details-5" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-5"><p><strong>Includes: </strong>50GB • 30 days • $78 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Long trips and high-data travellers.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-</div></div>
-<div class="plan-zone" id="europe"><h3>Europe Travel eSIM</h3><div class="plans-grid">
-<article class="plan-card"><span>Starter</span><h4>Europe Starter</h4><p>3GB • 15 days</p><strong>$16 CAD</strong><small>Short city breaks and light browsing.</small><button aria-controls="plan-details-6" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-6"><p><strong>Includes: </strong>3GB • 15 days • $16 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Short city breaks and light browsing.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Basic</span><h4>Europe Basic</h4><p>5GB • 30 days</p><strong>$25 CAD</strong><small>Light vacation use across Europe.</small><button aria-controls="plan-details-7" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-7"><p><strong>Includes: </strong>5GB • 30 days • $25 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Light vacation use across Europe.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card featured"><span>Best Pick</span><h4>Europe Plus</h4><p>10GB • 30 days</p><strong>$38 CAD</strong><small>Most 1–2 week Europe trips.</small><button aria-controls="plan-details-8" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-8"><p><strong>Includes: </strong>10GB • 30 days • $38 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Most 1–2 week Europe trips.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Max</span><h4>Europe Max</h4><p>20GB • 30 days</p><strong>$62 CAD</strong><small>Heavy use, hotspot, and longer trips.</small><button aria-controls="plan-details-9" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-9"><p><strong>Includes: </strong>20GB • 30 days • $62 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Heavy use, hotspot, and longer trips.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Ultra</span><h4>Europe Ultra</h4><p>50GB • 30 days</p><strong>$99 CAD</strong><small>Longer multi-country travel.</small><button aria-controls="plan-details-10" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-10"><p><strong>Includes: </strong>50GB • 30 days • $99 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Longer multi-country travel.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-</div></div>
-<div class="plan-zone" id="mexico"><h3>Mexico &amp; Caribbean</h3><div class="plans-grid four">
-<article class="plan-card"><span>Starter</span><h4>Trip Starter</h4><p>3GB • 15 days</p><strong>$19 CAD</strong><small>Messaging, maps, light resort or cruise use.</small><button aria-controls="plan-details-11" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-11"><p><strong>Includes: </strong>3GB • 15 days • $19 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Messaging, maps, light resort or cruise use.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Vacation</span><h4>Vacation</h4><p>5GB • 30 days</p><strong>$30 CAD</strong><small>Normal vacation use.</small><button aria-controls="plan-details-12" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-12"><p><strong>Includes: </strong>5GB • 30 days • $30 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Normal vacation use.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card featured"><span>Best Pick</span><h4>Vacation Plus</h4><p>10GB • 30 days</p><strong>$48 CAD</strong><small>Most resort, cruise, and beach trips.</small><button aria-controls="plan-details-13" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-13"><p><strong>Includes: </strong>10GB • 30 days • $48 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Most resort, cruise, and beach trips.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Max</span><h4>Vacation Max</h4><p>20GB • 30 days</p><strong>$78 CAD</strong><small>Heavy vacation data, video, and hotspot needs.</small><button aria-controls="plan-details-14" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-14"><p><strong>Includes: </strong>20GB • 30 days • $78 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Heavy vacation data, video, and hotspot needs.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-</div></div>
-<div class="plan-zone" id="canada"><h3>Canada Visitor</h3><div class="plans-grid four">
-<article class="plan-card"><span>Starter</span><h4>Visitor Starter</h4><p>3GB • 15 days</p><strong>$15 CAD</strong><small>Maps, rideshare, and messaging.</small><button aria-controls="plan-details-15" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-15"><p><strong>Includes: </strong>3GB • 15 days • $15 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Maps, rideshare, and messaging.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Basic</span><h4>Visitor Basic</h4><p>5GB • 30 days</p><strong>$24 CAD</strong><small>Short stays and everyday visitor data.</small><button aria-controls="plan-details-16" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-16"><p><strong>Includes: </strong>5GB • 30 days • $24 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Short stays and everyday visitor data.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card featured"><span>Best Pick</span><h4>Visitor Plus</h4><p>10GB • 30 days</p><strong>$38 CAD</strong><small>Longer Canada stays.</small><button aria-controls="plan-details-17" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-17"><p><strong>Includes: </strong>10GB • 30 days • $38 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Longer Canada stays.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Max</span><h4>Visitor Max</h4><p>20GB • 30 days</p><strong>$62 CAD</strong><small>Heavy visitor data and hotspot needs.</small><button aria-controls="plan-details-18" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-18"><p><strong>Includes: </strong>20GB • 30 days • $62 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Heavy visitor data and hotspot needs.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-</div></div>
-<div class="plan-zone" id="global"><h3>Global / World Pass</h3><div class="plans-grid four">
-<article class="plan-card"><span>Starter</span><h4>World Starter</h4><p>3GB • 15 days</p><strong>$25 CAD</strong><small>Light international travel.</small><button aria-controls="plan-details-19" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-19"><p><strong>Includes: </strong>3GB • 15 days • $25 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Light international travel.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Basic</span><h4>World Basic</h4><p>5GB • 30 days</p><strong>$38 CAD</strong><small>Backup data for multi-country trips.</small><button aria-controls="plan-details-20" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-20"><p><strong>Includes: </strong>5GB • 30 days • $38 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Backup data for multi-country trips.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card featured"><span>Best Pick</span><h4>World Plus</h4><p>10GB • 30 days</p><strong>$58 CAD</strong><small>Frequent travellers and multi-country trips.</small><button aria-controls="plan-details-21" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-21"><p><strong>Includes: </strong>10GB • 30 days • $58 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Frequent travellers and multi-country trips.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-<article class="plan-card"><span>Max</span><h4>World Max</h4><p>20GB • 30 days</p><strong>$92 CAD</strong><small>Heavy global travel data needs.</small><button aria-controls="plan-details-22" aria-expanded="false" class="plan-details-button" type="button">View Details</button><div class="plan-details hidden" id="plan-details-22"><p><strong>Includes: </strong>20GB • 30 days • $92 CAD • eSIM setup help • OctoCare support</p><p class="compact-use">Heavy global travel data needs.</p><p class="plan-details-note">Data-only eSIM. No phone number, calls, texts, port-ins, or emergency calling.</p></div></article>
-</div></div>
-<div class="notice-card">Planned pricing only. Final prices, coverage, hotspot rules, taxes, and availability may change before launch and supplier validation.</div></section>
-</main>
-<footer class="footer">
-<div class="footer-brand">
-<img alt="OctoNet Mobility logo" class="footer-logo" src="assets/octonet-mobility-logo.png"/>
-<p>Wireless Without Financial Stress</p>
-</div>
-<div class="footer-community">
-<span class="community-title">Community</span>
-<div class="community-links">
-<a aria-label="OctoNet WhatsApp" href="#">WhatsApp</a>
-<a aria-label="OctoNet Facebook" href="https://www.facebook.com/profile.php?id=61589797323715" rel="noopener noreferrer" target="_blank">Facebook</a>
-<a aria-label="OctoNet Instagram" href="https://www.instagram.com/octonetmobility/" rel="noopener noreferrer" target="_blank">Instagram</a>
-</div>
-</div>
-<div class="footer-links">
-    <a href="plans.html">Plans</a>
-    <a href="tools.html">Tools</a>
-    <a href="netpay.html">NETPAY</a>
-    <a href="support.html">Support</a>
-    <a href="security.html">Security</a>
-    <a href="privacy.html">Privacy &amp; Terms</a>
-    <span>Version 1.0 Beta</span>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div style="background:rgba(18,201,255,0.06);border:1px solid rgba(18,201,255,0.15);border-radius:18px;padding:20px 28px;margin-bottom:48px;display:flex;align-items:center;gap:16px;" class="reveal">
+      <span style="font-size:22px;">🛡️</span>
+      <div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:3px;">Travel Bill Shield on every plan</div>
+        <div style="font-size:13px;color:var(--muted);">We will never automatically charge you for overages or renewals. When data runs out, it stops.</div>
+      </div>
+    </div>
+    
+    <div class="card reveal" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;cursor:pointer;" onclick="this.parentElement.querySelector('.plan-list').style.display=this.parentElement.querySelector('.plan-list').style.display==='none'?'flex':'none'">
+        <span style="font-size:36px;">🇺🇸</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:800;">United States</div>
+          <div style="font-size:14px;color:var(--muted);">Best for cross-border trips and US travel.</div>
+        </div>
+        <span style="color:var(--cyan);font-size:20px;">▼</span>
+      </div>
+      <div class="plan-list" style="display:flex;flex-direction:column;gap:10px;">
+        
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Travel Starter</div>
+            <div style="font-size:13px;color:var(--muted);">3GB · 15 days · Weekend trips, maps, messaging.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$12</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Travel Basic</div>
+            <div style="font-size:13px;color:var(--muted);">5GB · 30 days · Light vacation use and everyday travel basics.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$18</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-color:rgba(18,201,255,0.35);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Travel Plus<span style="background:rgba(18,201,255,0.12);color:var(--cyan);font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;">Best Pick</span></div>
+            <div style="font-size:13px;color:var(--muted);">10GB · 30 days · Main USA pick for most travellers.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$28</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Travel Max</div>
+            <div style="font-size:13px;color:var(--muted);">20GB · 30 days · Heavy users, hotspot needs, and work travel.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$45</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Travel Ultra</div>
+            <div style="font-size:13px;color:var(--muted);">50GB · 30 days · Long trips and high-data travellers.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$78</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;cursor:pointer;" onclick="this.parentElement.querySelector('.plan-list').style.display=this.parentElement.querySelector('.plan-list').style.display==='none'?'flex':'none'">
+        <span style="font-size:36px;">🇪🇺</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:800;">Europe</div>
+          <div style="font-size:14px;color:var(--muted);">For city breaks and multi-country Europe trips.</div>
+        </div>
+        <span style="color:var(--cyan);font-size:20px;">▼</span>
+      </div>
+      <div class="plan-list" style="display:flex;flex-direction:column;gap:10px;">
+        
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Europe Starter</div>
+            <div style="font-size:13px;color:var(--muted);">3GB · 15 days · Short city breaks and light browsing.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$16</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Europe Basic</div>
+            <div style="font-size:13px;color:var(--muted);">5GB · 30 days · Light vacation use across Europe.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$25</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-color:rgba(18,201,255,0.35);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Europe Plus<span style="background:rgba(18,201,255,0.12);color:var(--cyan);font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;">Best Pick</span></div>
+            <div style="font-size:13px;color:var(--muted);">10GB · 30 days · Most 1–2 week Europe trips.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$38</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Europe Max</div>
+            <div style="font-size:13px;color:var(--muted);">20GB · 30 days · Heavy use, hotspot, and longer trips.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$62</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Europe Ultra</div>
+            <div style="font-size:13px;color:var(--muted);">50GB · 30 days · Longer multi-country travel.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$99</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;cursor:pointer;" onclick="this.parentElement.querySelector('.plan-list').style.display=this.parentElement.querySelector('.plan-list').style.display==='none'?'flex':'none'">
+        <span style="font-size:36px;">🇲🇽</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:800;">Mexico & Caribbean</div>
+          <div style="font-size:14px;color:var(--muted);">For resorts, cruises, and vacation data.</div>
+        </div>
+        <span style="color:var(--cyan);font-size:20px;">▼</span>
+      </div>
+      <div class="plan-list" style="display:flex;flex-direction:column;gap:10px;">
+        
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Trip Starter</div>
+            <div style="font-size:13px;color:var(--muted);">3GB · 15 days · Maps, messaging, light resort use.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$19</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Vacation</div>
+            <div style="font-size:13px;color:var(--muted);">5GB · 30 days · Normal vacation use.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$30</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-color:rgba(18,201,255,0.35);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Vacation Plus<span style="background:rgba(18,201,255,0.12);color:var(--cyan);font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;">Best Pick</span></div>
+            <div style="font-size:13px;color:var(--muted);">10GB · 30 days · Most resort, cruise, and beach trips.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$48</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Vacation Max</div>
+            <div style="font-size:13px;color:var(--muted);">20GB · 30 days · Heavy vacation data and hotspot needs.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$78</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;cursor:pointer;" onclick="this.parentElement.querySelector('.plan-list').style.display=this.parentElement.querySelector('.plan-list').style.display==='none'?'flex':'none'">
+        <span style="font-size:36px;">🇨🇦</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:800;">Canada Visitor</div>
+          <div style="font-size:14px;color:var(--muted);">For visitors needing data while in Canada.</div>
+        </div>
+        <span style="color:var(--cyan);font-size:20px;">▼</span>
+      </div>
+      <div class="plan-list" style="display:flex;flex-direction:column;gap:10px;">
+        
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Visitor Starter</div>
+            <div style="font-size:13px;color:var(--muted);">3GB · 15 days · Maps, rideshare, and messaging.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$15</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Visitor Basic</div>
+            <div style="font-size:13px;color:var(--muted);">5GB · 30 days · Short stays and everyday visitor data.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$24</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-color:rgba(18,201,255,0.35);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Visitor Plus<span style="background:rgba(18,201,255,0.12);color:var(--cyan);font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;">Best Pick</span></div>
+            <div style="font-size:13px;color:var(--muted);">10GB · 30 days · Longer Canada stays.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$38</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">Visitor Max</div>
+            <div style="font-size:13px;color:var(--muted);">20GB · 30 days · Heavy visitor data and hotspot needs.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$62</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card reveal" style="margin-bottom:16px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;cursor:pointer;" onclick="this.parentElement.querySelector('.plan-list').style.display=this.parentElement.querySelector('.plan-list').style.display==='none'?'flex':'none'">
+        <span style="font-size:36px;">🌍</span>
+        <div style="flex:1;">
+          <div style="font-family:var(--font-display);font-size:20px;font-weight:800;">Global</div>
+          <div style="font-size:14px;color:var(--muted);">Multi-country and frequent travellers.</div>
+        </div>
+        <span style="color:var(--cyan);font-size:20px;">▼</span>
+      </div>
+      <div class="plan-list" style="display:flex;flex-direction:column;gap:10px;">
+        
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">World Starter</div>
+            <div style="font-size:13px;color:var(--muted);">3GB · 15 days · Light international travel.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$25</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">World Basic</div>
+            <div style="font-size:13px;color:var(--muted);">5GB · 30 days · Backup data for multi-country trips.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$38</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-color:rgba(18,201,255,0.35);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">World Plus<span style="background:rgba(18,201,255,0.12);color:var(--cyan);font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-left:8px;">Best Pick</span></div>
+            <div style="font-size:13px;color:var(--muted);">10GB · 30 days · Frequent travellers and multi-country trips.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$58</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+        <div style="background:rgba(10,28,54,0.6);border:1px solid var(--border);border-radius:18px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:border-color 0.2s;">
+          <div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:4px;">World Max</div>
+            <div style="font-size:13px;color:var(--muted);">20GB · 30 days · Heavy global travel data needs.</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cyan);">$92</div>
+            <div style="font-size:11px;color:rgba(240,248,255,0.4);">CAD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notice reveal" style="margin-top:32px;">
+      Plans are in preview — final pricing, coverage, and availability confirmed at 2027 launch. All plans are data-only. No phone number, calls, or texts included.
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+          <span class="footer-logo-name">OctoNet Mobility</span>
+        </div>
+        <p class="footer-tagline">Wireless Without Financial Stress. Travel eSIM plans built for Canadians. Launching 2027.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/octonetmobility/" class="social-btn">📸</a>
+          <a href="https://www.facebook.com/profile.php?id=61589797323715" class="social-btn">📘</a>
+          <a href="mailto:hello.octonetmobility@gmail.com" class="social-btn">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="/plans.html">Travel Plans</a></li><li><a href="/netpay.html">NETPAY</a></li><li><a href="/tools.html">Tools</a></li><li><a href="/coverage.html">Coverage</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About OctoNet</a></li><li><a href="/support.html">OctoCare Support</a></li><li><a href="/security.html">Security</a></li><li><a href="mailto:hello.octonetmobility@gmail.com">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/privacy.html">Terms of Service</a></li><li><a href="/privacy.html">Refund Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">OctoNet Mobility · v1.0 Beta · Canadian-built · Projected 2027 Launch</p>
+      <div class="footer-bottom-links"><a href="/privacy.html">Privacy</a><a href="/privacy.html">Terms</a><a href="/security.html">Security</a></div>
+    </div>
   </div>
 </footer>
-<script src="script.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- OCTONET REAL FIREBASE SIGN IN MODAL -->
-<div class="octonet-signin-modal" id="signinModal" aria-hidden="true">
-  <div class="octonet-signin-card" role="dialog" aria-modal="true" aria-labelledby="signinTitle">
-    <button class="signin-close-btn" type="button" data-close-signin aria-label="Close sign in">✕</button>
-
-    <div class="signin-logo">🐙</div>
-
-    <h2 id="signinTitle">Welcome Back</h2>
-    <p id="signinDesc">Sign in to manage your eSIMs, billing, account settings, and OctoCare tools.</p>
-
-    <form class="signin-form">
-      <div id="signinMessage" class="signin-message"></div>
-
-      <input id="signinEmail" type="email" placeholder="Email Address" autocomplete="email">
-      <input id="signinPassword" type="password" placeholder="Password" autocomplete="current-password">
-
-      <button id="signinSubmitBtn" type="submit" class="signin-main-btn">Sign In</button>
-
-      <div class="signin-divider"><span>or continue with</span></div>
-
-      <div class="signin-socials">
-        <button id="googleSigninBtn" type="button">Google</button>
-        <button id="appleSigninBtn" type="button">Apple</button>
-      </div>
-
-      <div class="signin-footer-links">
-        <a href="#" id="createAccountBtn">Create Account</a>
-        <a href="#" id="forgotPasswordBtn">Forgot Password?</a>
-      </div>
-    </form>
-  </div>
-</div>
-<script type="module" src="signin.js"></script>
-
+<a href="/support.html" class="float-btn">🐙 OctoCare</a>
 </body>
 </html>

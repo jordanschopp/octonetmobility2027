@@ -1,179 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" href="assets/favicon-256.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <meta name="theme-color" content="#071426" />
-  <title>Tools | OctoNet Mobility</title>
-  <meta name="description" content="OctoNet Mobility tools for eSIM compatibility, roaming savings, plan recommendations, and setup guidance." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Check eSIM device compatibility, calculate roaming savings, and prepare for travel with OctoNet tools.">
+<meta name="theme-color" content="#040E1C">
+<title>Tools | OctoNet Mobility</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#040E1C;--navy2:#071426;--navy3:#0A1E38;--card:rgba(10,28,54,0.92);--cyan:#12C9FF;--cyan2:#7DE7FF;--green:#1D9E75;--border:rgba(18,201,255,0.12);--muted:rgba(125,231,255,0.55);--text:#F0F8FF;--radius:22px;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--navy);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(18,201,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(18,201,255,0.035) 1px,transparent 1px);background-size:56px 56px;}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+section{padding:90px 0;position:relative;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);background:rgba(4,14,28,0.88);}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:36px;}
+.nav-logo-text{font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--text);letter-spacing:-0.3px;}
+.nav-links{display:flex;align-items:center;gap:8px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:10px;transition:color 0.2s,background 0.2s;}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.06);}
+.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:10px 22px;border-radius:12px;text-decoration:none;transition:opacity 0.2s,transform 0.15s;}
+.nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+.page-hero{padding:140px 0 80px;text-align:center;}
+.page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(18,201,255,0.08);border:1px solid rgba(18,201,255,0.18);color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:24px;}
+.page-title{font-family:var(--font-display);font-size:clamp(38px,5.5vw,68px);font-weight:800;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;}
+.page-title em{font-style:normal;color:var(--cyan);}
+.page-subtitle{font-size:18px;color:rgba(240,248,255,0.65);line-height:1.7;font-weight:300;max-width:580px;margin:0 auto;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:border-color 0.3s,transform 0.25s;}
+.card:hover{border-color:rgba(18,201,255,0.28);transform:translateY(-3px);}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;}
+.section-title{font-family:var(--font-display);font-size:clamp(30px,4vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.section-sub{font-size:17px;color:rgba(240,248,255,0.6);line-height:1.7;font-weight:300;max-width:560px;}
+.btn-primary{background:var(--cyan);color:#040E1C;font-weight:700;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 8px 32px rgba(18,201,255,0.25);display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-primary:hover{opacity:0.88;transform:translateY(-2px);}
+.btn-secondary{background:transparent;color:var(--text);font-weight:600;font-size:16px;padding:16px 32px;border-radius:16px;text-decoration:none;border:1px solid var(--border);transition:background 0.2s,border-color 0.2s,transform 0.15s;display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);}
+.btn-secondary:hover{background:rgba(255,255,255,0.06);border-color:rgba(18,201,255,0.3);transform:translateY(-2px);}
+footer{border-top:1px solid var(--border);padding:60px 0 40px;background:rgba(4,14,28,0.8);}
+.footer-inner{max-width:1120px;margin:0 auto;padding:0 24px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border);}
+.footer-brand{}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.footer-logo img{height:32px;}
+.footer-logo-name{font-family:var(--font-display);font-weight:800;font-size:16px;}
+.footer-tagline{font-size:14px;color:rgba(240,248,255,0.45);line-height:1.6;font-weight:300;max-width:240px;}
+.footer-social{display:flex;gap:10px;margin-top:20px;}
+.social-btn{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;transition:background 0.2s,border-color 0.2s;}
+.social-btn:hover{background:rgba(18,201,255,0.10);border-color:rgba(18,201,255,0.2);}
+.footer-col h4{font-family:var(--font-display);font-size:14px;font-weight:700;margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col ul a{color:rgba(240,248,255,0.5);text-decoration:none;font-size:14px;transition:color 0.2s;}
+.footer-col ul a:hover{color:var(--text);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:32px;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:13px;color:rgba(240,248,255,0.35);}
+.footer-bottom-links{display:flex;gap:24px;}
+.footer-bottom-links a{font-size:13px;color:rgba(240,248,255,0.4);text-decoration:none;transition:color 0.2s;}
+.footer-bottom-links a:hover{color:var(--cyan);}
+.float-btn{position:fixed;bottom:28px;right:28px;z-index:99;background:var(--cyan);color:#040E1C;font-weight:700;font-size:14px;padding:14px 22px;border-radius:16px;text-decoration:none;display:flex;align-items:center;gap:8px;box-shadow:0 8px 32px rgba(18,201,255,0.3);transition:transform 0.2s,box-shadow 0.2s;}
+.float-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(18,201,255,0.4);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.notice{background:rgba(18,201,255,0.06);border:1px solid rgba(18,201,255,0.15);border-radius:16px;padding:20px 24px;font-size:14px;color:rgba(240,248,255,0.65);line-height:1.6;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+@media(max-width:600px){section{padding:64px 0;}.footer-top{grid-template-columns:1fr;}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+
 </head>
 <body>
-
-<header class="octo-clean-header">
-  <div class="octo-clean-nav">
-    <a class="octo-clean-logo" href="index.html" aria-label="OctoNet Mobility Home">
-      <img src="assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+      <span class="nav-logo-text">OctoNet Mobility</span>
     </a>
-
-    <nav class="octo-clean-links" aria-label="Main navigation">
-        <a class="octo-nav-link" href="index.html">Home</a>
-        <a class="octo-nav-link" href="plans.html">Plans</a>
-        <a class="octo-nav-link active" href="tools.html">Tools</a>
-        <a class="octo-nav-link" href="netpay.html">NETPAY</a>
-        <a class="octo-nav-link" href="coverage.html">Coverage</a>
-        <a class="octo-nav-link" href="about.html">About</a>
-        <a class="octo-nav-link" href="support.html">Support</a>
-        <a class="octo-nav-link" href="security.html">Security</a>
-    </nav>
-
-    
-<button class="octo-signin-trigger" type="button" data-open-signin>Sign In</button>
-
+    <ul class="nav-links">
+      <li><a href="/plans.html" >Plans</a></li>
+      <li><a href="/netpay.html" >NETPAY</a></li>
+      <li><a href="/about.html" >About</a></li>
+      <li><a href="/support.html" >Support</a></li>
+    </ul>
+    <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
   </div>
-</header>
+</nav>
 
-<main>
-<section class="page-hero section">
-  <span class="eyebrow">Tools • Beta Preview</span>
-  <h1>Travel tools built for clarity.</h1>
-  <p>Use OctoNet tools to estimate roaming savings, check eSIM readiness, find a plan style, and review setup guidance before launch.</p>
+<section class="page-hero">
+  <div class="container">
+    <div class="page-eyebrow">Travel Tools</div>
+    <h1 class="page-title">Travel smarter<br><em>before you go.</em></h1>
+    <p class="page-subtitle">Simple tools to help you check device compatibility, estimate data needs, and understand your savings.</p>
+  </div>
 </section>
 
-<section class="section tool-section">
-  <div class="two-column">
-    <article class="info-card tool-card">
-      <div class="support-icon">📱</div>
-      <h3>Device Compatibility</h3>
-      <p>Check if your phone may support travel eSIM service. Final compatibility depends on exact model, region, and carrier lock status.</p>
-      <label for="deviceName">Phone model</label>
-      <input id="deviceName" type="text" placeholder="Example: iPhone 14 Pro, Galaxy S24, Pixel 8" />
-      <label class="checkline"><input id="deviceUnlocked" type="checkbox" /> My phone is carrier unlocked</label>
-      <button class="primary-button full" id="checkDeviceBtn" type="button">Check Compatibility</button>
-      <div class="support-result hidden" id="deviceResult"></div>
-    </article>
-
-    <article class="info-card tool-card">
-      <div class="support-icon">💸</div>
-      <h3>Roaming Savings Calculator</h3>
-      <p>Compare daily roaming charges against an OctoNet travel eSIM preview plan.</p>
-      <label for="roamingCost">Carrier roaming cost per day</label>
-      <input id="roamingCost" type="number" inputmode="decimal" placeholder="Example: 15" />
-      <label for="travelDays">Travel days</label>
-      <input id="travelDays" type="number" inputmode="numeric" placeholder="Example: 10" />
-      <label for="octonetPrice">OctoNet plan price</label>
-      <input id="octonetPrice" type="number" inputmode="decimal" value="28" />
-      <button class="primary-button full" id="calculateSavingsBtn" type="button">Calculate Savings</button>
-      <div class="support-result hidden" id="savingsResult"></div>
-    </article>
-  </div>
-
-  <div class="plan-zone">
-    <div class="section-heading">
-      <span class="eyebrow">Plan Finder</span>
-      <h2>Find your best plan style.</h2>
-      <p>Choose a travel style and get a simple OctoNet plan suggestion.</p>
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="card reveal" style="margin-bottom:20px;">
+      <h2 style="font-family:var(--font-display);font-size:20px;font-weight:800;margin-bottom:16px;">📱 Device Compatibility Check</h2>
+      <p style="font-size:14px;color:rgba(240,248,255,0.6);margin-bottom:20px;">To check if your phone supports eSIM — go to Settings → General → About and look for an EID number. If it is there, your phone supports eSIM.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <input id="deviceInput" type="text" placeholder="Enter your phone model e.g. iPhone 15 Pro" style="background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:15px;padding:14px 18px;border-radius:14px;outline:none;width:100%;" onfocus="this.style.borderColor='rgba(18,201,255,0.4)'" onblur="this.style.borderColor='var(--border)'">
+        <button onclick="checkDevice()" style="background:var(--cyan);color:#040E1C;font-weight:700;font-size:15px;padding:14px;border-radius:14px;border:none;cursor:pointer;font-family:var(--font-body);">Check Compatibility</button>
+        <div id="deviceResult" style="display:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;"></div>
+      </div>
     </div>
-    <div class="info-grid recommendation-grid">
-      <button class="recommendation-card" data-recommendation="Recommended: Travel Starter — 3GB / 15 Days. Best for maps, messaging, and light browsing."><strong>Light Traveler</strong><span>Maps, messaging, light browsing</span></button>
-      <button class="recommendation-card" data-recommendation="Recommended: Travel Plus — 10GB / 30 Days. Best for vacation photos, social media, and everyday use."><strong>Vacation Traveler</strong><span>Photos, social media, daily use</span></button>
-      <button class="recommendation-card" data-recommendation="Recommended: Travel Max — 20GB / 30 Days. Best for hotspot, work, video calls, and heavier use."><strong>Heavy Data User</strong><span>Hotspot, work, video calls</span></button>
-    </div>
-    <div class="support-result hidden" id="recommendationResult"></div>
-  </div>
 
-  <div class="two-column plan-zone">
-    <article class="info-card setup-card">
-      <h3>iPhone Setup Guide</h3>
-      <ol><li>Open Settings.</li><li>Tap Cellular.</li><li>Tap Add eSIM.</li><li>Scan QR code or use carrier activation.</li><li>Turn on data roaming for the travel line.</li></ol>
-    </article>
-    <article class="info-card setup-card">
-      <h3>Samsung / Android Setup Guide</h3>
-      <ol><li>Open Settings.</li><li>Go to Connections.</li><li>Tap SIM Manager.</li><li>Add eSIM.</li><li>Scan QR code and enable mobile data.</li></ol>
-    </article>
+    <div class="card reveal" style="margin-bottom:20px;">
+      <h2 style="font-family:var(--font-display);font-size:20px;font-weight:800;margin-bottom:16px;">💸 Roaming Savings Calculator</h2>
+      <p style="font-size:14px;color:rgba(240,248,255,0.6);margin-bottom:20px;">See how much you could save vs carrier roaming rates.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <input id="roamCost" type="number" placeholder="Your carrier daily roaming cost e.g. 15" style="background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:15px;padding:14px 18px;border-radius:14px;outline:none;" onfocus="this.style.borderColor='rgba(18,201,255,0.4)'" onblur="this.style.borderColor='var(--border)'">
+        <input id="roamDays" type="number" placeholder="Number of travel days e.g. 10" style="background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:15px;padding:14px 18px;border-radius:14px;outline:none;" onfocus="this.style.borderColor='rgba(18,201,255,0.4)'" onblur="this.style.borderColor='var(--border)'">
+        <button onclick="calcSavings()" style="background:var(--cyan);color:#040E1C;font-weight:700;font-size:15px;padding:14px;border-radius:14px;border:none;cursor:pointer;font-family:var(--font-body);">Calculate Savings</button>
+        <div id="savingsResult" style="display:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;"></div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-bottom:20px;">
+      <h2 style="font-family:var(--font-display);font-size:20px;font-weight:800;margin-bottom:20px;">📋 eSIM Setup Checklist</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:#1D9E75;font-size:16px;font-weight:800;flex-shrink:0;">✓</span>
+          <span style="font-size:15px;color:rgba(240,248,255,0.8);">Check your phone has eSIM support (look for EID in Settings → About)</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:#1D9E75;font-size:16px;font-weight:800;flex-shrink:0;">✓</span>
+          <span style="font-size:15px;color:rgba(240,248,255,0.8);">Confirm your phone is carrier unlocked (contact your carrier — free in Canada)</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:#1D9E75;font-size:16px;font-weight:800;flex-shrink:0;">✓</span>
+          <span style="font-size:15px;color:rgba(240,248,255,0.8);">Install the OctoNet eSIM at home on Wi-Fi before you travel</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:#1D9E75;font-size:16px;font-weight:800;flex-shrink:0;">✓</span>
+          <span style="font-size:15px;color:rgba(240,248,255,0.8);">Keep your home SIM active for calls and texts if needed</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:#1D9E75;font-size:16px;font-weight:800;flex-shrink:0;">✓</span>
+          <span style="font-size:15px;color:rgba(240,248,255,0.8);">Set OctoNet as your mobile data line in Settings</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:#1D9E75;font-size:16px;font-weight:800;flex-shrink:0;">✓</span>
+          <span style="font-size:15px;color:rgba(240,248,255,0.8);">Turn off Data Roaming on your home SIM to avoid carrier charges</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:12px;">
+          <span style="color:#1D9E75;font-size:16px;font-weight:800;flex-shrink:0;">✓</span>
+          <span style="font-size:15px;color:rgba(240,248,255,0.8);">Use Wi-Fi for large downloads and backups</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice reveal">Tools are for guidance only. eSIM compatibility depends on your specific device model and carrier unlock status.</div>
   </div>
-  <div class="notice-card support-notice">These tools are estimates and beta previews. Compatibility, coverage, taxes, hotspot rules, and plan availability may change before launch.</div>
 </section>
-</main>
-<footer class="footer">
-  <div class="footer-brand">
-    <img class="footer-logo" src="assets/octonet-mobility-logo.png" alt="OctoNet Mobility logo" />
-    <p>Wireless Without Financial Stress</p>
-  </div>
-  <div class="footer-community">
-    <span class="community-title">Community</span>
-    <div class="community-links">
-      <a href="#" aria-label="OctoNet WhatsApp">WhatsApp</a>
-      <a href="https://www.facebook.com/profile.php?id=61589797323715" target="_blank" rel="noopener noreferrer" aria-label="OctoNet Facebook">Facebook</a>
-      <a href="https://www.instagram.com/octonetmobility/" target="_blank" rel="noopener noreferrer" aria-label="OctoNet Instagram">Instagram</a>
+<script>
+function checkDevice(){
+  const v=document.getElementById('deviceInput').value.toLowerCase();
+  const r=document.getElementById('deviceResult');
+  r.style.display='block';
+  const compat=['iphone xr','iphone xs','iphone 11','iphone 12','iphone 13','iphone 14','iphone 15','iphone 16','iphone 17','pixel 3','pixel 4','pixel 5','pixel 6','pixel 7','pixel 8','pixel 9','galaxy s20','galaxy s21','galaxy s22','galaxy s23','galaxy s24','galaxy s25'];
+  const found=compat.some(c=>v.includes(c.split(' ')[0]) && v.includes(c.split(' ')[1]||''));
+  if(!v){r.style.display='none';return;}
+  if(found){r.style.background='rgba(29,158,117,0.12)';r.style.border='1px solid rgba(29,158,117,0.3)';r.style.color='#8DFFE9';r.textContent='✓ '+document.getElementById('deviceInput').value+' likely supports eSIM. Also confirm your phone is carrier unlocked.';}
+  else{r.style.background='rgba(18,201,255,0.08)';r.style.border='1px solid rgba(18,201,255,0.2)';r.style.color='var(--cyan2)';r.textContent='Go to Settings → General → About and look for an EID number to confirm eSIM support on your specific device.';}
+}
+function calcSavings(){
+  const cost=parseFloat(document.getElementById('roamCost').value)||0;
+  const days=parseFloat(document.getElementById('roamDays').value)||0;
+  const r=document.getElementById('savingsResult');
+  if(!cost||!days){r.style.display='none';return;}
+  const carrier=cost*days;
+  const octo=28;
+  const saved=carrier-octo;
+  r.style.display='block';
+  if(saved>0){r.style.background='rgba(29,158,117,0.12)';r.style.border='1px solid rgba(29,158,117,0.3)';r.style.color='#8DFFE9';r.textContent='Carrier roaming: $'+carrier.toFixed(0)+' CAD vs OctoNet ~$'+octo+' CAD = save ~$'+saved.toFixed(0)+' CAD.';}
+  else{r.style.background='rgba(18,201,255,0.08)';r.style.border='1px solid rgba(18,201,255,0.2)';r.style.color='var(--cyan2)';r.textContent='Carrier roaming: $'+carrier.toFixed(0)+' CAD. For short trips, OctoNet offers the same price without surprise overages.';}
+}
+</script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
+          <span class="footer-logo-name">OctoNet Mobility</span>
+        </div>
+        <p class="footer-tagline">Wireless Without Financial Stress. Travel eSIM plans built for Canadians. Launching 2027.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/octonetmobility/" class="social-btn">📸</a>
+          <a href="https://www.facebook.com/profile.php?id=61589797323715" class="social-btn">📘</a>
+          <a href="mailto:hello.octonetmobility@gmail.com" class="social-btn">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="/plans.html">Travel Plans</a></li><li><a href="/netpay.html">NETPAY</a></li><li><a href="/tools.html">Tools</a></li><li><a href="/coverage.html">Coverage</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About OctoNet</a></li><li><a href="/support.html">OctoCare Support</a></li><li><a href="/security.html">Security</a></li><li><a href="mailto:hello.octonetmobility@gmail.com">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/privacy.html">Terms of Service</a></li><li><a href="/privacy.html">Refund Policy</a></li></ul></div>
     </div>
-  </div>
-  <div class="footer-links">
-    <a href="plans.html">Plans</a>
-    <a href="tools.html">Tools</a>
-    <a href="netpay.html">NETPAY</a>
-    <a href="support.html">Support</a>
-    <a href="security.html">Security</a>
-    <a href="privacy.html">Privacy &amp; Terms</a>
-    <span>Version 1.0 Beta</span>
+    <div class="footer-bottom">
+      <p class="footer-copy">OctoNet Mobility · v1.0 Beta · Canadian-built · Projected 2027 Launch</p>
+      <div class="footer-bottom-links"><a href="/privacy.html">Privacy</a><a href="/privacy.html">Terms</a><a href="/security.html">Security</a></div>
+    </div>
   </div>
 </footer>
-<script src="script.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- OCTONET REAL FIREBASE SIGN IN MODAL -->
-<div class="octonet-signin-modal" id="signinModal" aria-hidden="true">
-  <div class="octonet-signin-card" role="dialog" aria-modal="true" aria-labelledby="signinTitle">
-    <button class="signin-close-btn" type="button" data-close-signin aria-label="Close sign in">✕</button>
-
-    <div class="signin-logo">🐙</div>
-
-    <h2 id="signinTitle">Welcome Back</h2>
-    <p id="signinDesc">Sign in to manage your eSIMs, billing, account settings, and OctoCare tools.</p>
-
-    <form class="signin-form">
-      <div id="signinMessage" class="signin-message"></div>
-
-      <input id="signinEmail" type="email" placeholder="Email Address" autocomplete="email">
-      <input id="signinPassword" type="password" placeholder="Password" autocomplete="current-password">
-
-      <button id="signinSubmitBtn" type="submit" class="signin-main-btn">Sign In</button>
-
-      <div class="signin-divider"><span>or continue with</span></div>
-
-      <div class="signin-socials">
-        <button id="googleSigninBtn" type="button">Google</button>
-        <button id="appleSigninBtn" type="button">Apple</button>
-      </div>
-
-      <div class="signin-footer-links">
-        <a href="#" id="createAccountBtn">Create Account</a>
-        <a href="#" id="forgotPasswordBtn">Forgot Password?</a>
-      </div>
-    </form>
-  </div>
-</div>
-<script type="module" src="signin.js"></script>
-
+<a href="/support.html" class="float-btn">🐙 OctoCare</a>
 </body>
 </html>
