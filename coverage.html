@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OctoNet Mobility travel eSIM coverage for USA, Europe, Mexico, Canada Visitor, and Global destinations.">
+<meta name="description" content="OctoNet Mobility travel eSIM coverage for USA, Europe, Mexico, Canada Visitor, and Global.">
 <meta name="theme-color" content="#040E1C">
 <title>Coverage | OctoNet Mobility</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,12 +85,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       <img src="/assets/octonet-mobility-logo.png" alt="OctoNet Mobility">
       <span class="nav-logo-text">OctoNet Mobility</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="/plans.html" >Plans</a></li>
-      <li><a href="/netpay.html" >NETPAY</a></li>
-      <li><a href="/about.html" >About</a></li>
-      <li><a href="/support.html" >Support</a></li>
-    </ul>
+    <ul class="nav-links"><li><a href="/" >Home</a></li><li><a href="/plans.html" >Destinations</a></li><li><a href="/ocr.html" >OCR</a></li><li><a href="/support.html" >OctoCare</a></li><li><a href="/netpay.html" >NETPAY</a></li><li><a href="/about.html" >Hub</a></li></ul>
     <a href="/#waitlist" class="nav-cta">Join Waitlist</a>
   </div>
 </nav>
@@ -169,6 +164,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     </div>
   </div>
 </section>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -178,22 +174,47 @@ document.addEventListener('DOMContentLoaded',()=>{
           <span class="footer-logo-name">OctoNet Mobility</span>
         </div>
         <p class="footer-tagline">Wireless Without Financial Stress. Travel eSIM plans built for Canadians. Launching 2027.</p>
-        <div class="footer-social">
+        <div style="margin-top:14px;"><span style="background:rgba(18,201,255,0.10);border:1px solid rgba(18,201,255,0.2);color:var(--cyan);font-size:11px;font-weight:700;padding:6px 14px;border-radius:999px;">Launching in 2027</span></div>
+        <div class="footer-social" style="margin-top:16px;">
           <a href="https://www.instagram.com/octonetmobility/" class="social-btn">📸</a>
           <a href="https://www.facebook.com/profile.php?id=61589797323715" class="social-btn">📘</a>
           <a href="mailto:hello.octonetmobility@gmail.com" class="social-btn">✉️</a>
         </div>
       </div>
-      <div class="footer-col"><h4>Product</h4><ul><li><a href="/plans.html">Travel Plans</a></li><li><a href="/netpay.html">NETPAY</a></li><li><a href="/tools.html">Tools</a></li><li><a href="/coverage.html">Coverage</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="/about.html">About OctoNet</a></li><li><a href="/support.html">OctoCare Support</a></li><li><a href="/security.html">Security</a></li><li><a href="mailto:hello.octonetmobility@gmail.com">Contact Us</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/privacy.html">Terms of Service</a></li><li><a href="/privacy.html">Refund Policy</a></li></ul></div>
+      <div class="footer-col"><h4>Product</h4><ul>
+        <li><a href="/plans.html">Destinations</a></li>
+        <li><a href="/ocr.html">Octo Reimagined</a></li>
+        <li><a href="/netpay.html">NETPAY</a></li>
+        <li><a href="/tools.html">Tools</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/about.html">About OctoNet</a></li>
+        <li><a href="/road-to-2027.html">Road to 2027</a></li>
+        <li><a href="/support.html">OctoCare Support</a></li>
+        <li><a href="mailto:hello.octonetmobility@gmail.com">Contact Us</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/privacy.html">Terms of Service</a></li>
+        <li><a href="/privacy.html">Refund Policy</a></li>
+        <li><a href="/security.html">Security</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">OctoNet Mobility · v1.0 Beta · Canadian-built · Projected 2027 Launch</p>
-      <div class="footer-bottom-links"><a href="/privacy.html">Privacy</a><a href="/privacy.html">Terms</a><a href="/security.html">Security</a></div>
+      <p class="footer-copy">OctoNet Mobility · v1.0 Beta · Canadian-built · Launching 2027</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/privacy.html">Terms</a>
+        <a href="/security.html">Security</a>
+      </div>
     </div>
   </div>
 </footer>
 <a href="/support.html" class="float-btn">🐙 OctoCare</a>
-</body>
-</html>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+});
+</script>
+</body></html>
